@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class Options_interactions : MonoBehaviour
 {
-   
+    public void fullScreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
     
 }
