@@ -7,17 +7,17 @@ public class Button_interactions : MonoBehaviour
     //public GameObject current_robot;
     public void Send_out()
     {
-        GameObject current_robot = GameObject.Find("Robot");
-        Rigidbody2D robot_rb = current_robot.GetComponent<Rigidbody2D>();
-        robot_rb.velocity = Vector3.right;
-        Destroy(current_robot, 5f);
+        GameObject currentRobot = GameObject.Find("Robot");
+        Rigidbody2D robotRB = currentRobot.GetComponent<Rigidbody2D>();
+        robotRB.velocity = Vector3.right;
+        Destroy(currentRobot, 5f);
     }
 
     public void Discard()
     {
-        GameObject current_robot = GameObject.Find("Robot");
-        Rigidbody2D robot_rb = current_robot.GetComponent<Rigidbody2D>();
-        robot_rb.velocity = Vector3.down;
-        Destroy(current_robot, 2f);
+        GameObject currentRobot = GameObject.Find("Robot");
+        Rigidbody2D robotRB = currentRobot.GetComponent<Rigidbody2D>();
+        robotRB.velocity = Vector3.down;
+        Destroy(currentRobot, 2f);
     }
 }
