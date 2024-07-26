@@ -13,14 +13,14 @@ public class Menu_interactions : MonoBehaviour
 
     public void optionButton()
     {
-        Debug.Log("Load3");
-        SceneManager.LoadScene(3);
+        Debug.Log("Load4");
+        SceneManager.LoadScene(4);
     }
 
     public void creditsMenu()
     {
-        Debug.Log("Load4");
-        SceneManager.LoadScene(4);
+        Debug.Log("Load3");
+        SceneManager.LoadScene(3);
     }
 
     public void quitGame()
