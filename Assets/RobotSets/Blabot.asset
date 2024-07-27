@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8d46d2dda5bab4386f2fe697bae8a9, type: 3}
   m_Name: Blabot
   m_EditorClassIdentifier: 
-  torsoOff: {fileID: 0}
-  torsoOn: {fileID: 0}
-  headOff: {fileID: 0}
-  headOn: {fileID: 0}
-  headActive: {fileID: 0}
-  Arm: {fileID: 0}
-  Leg: {fileID: 0}
+  torsoOff: {fileID: 21300000, guid: 76f079fa6704ecb4597d2e4d1a9b6e49, type: 3}
+  torsoOn: {fileID: 21300000, guid: 72ee7f856a21a664a905b65aafd1df6d, type: 3}
+  headOff: {fileID: 21300000, guid: 71009a1e05788a140a4f1cd3bb04672c, type: 3}
+  headOn: {fileID: 21300000, guid: a019c1ae4d605384590dd543efb28b22, type: 3}
+  headActive: {fileID: 21300000, guid: 537c985d4e8d77b42a30d18244d93f20, type: 3}
+  Arm: {fileID: 21300000, guid: cd9d9552d665d634aac1eb413a2514a9, type: 3}
+  Leg: {fileID: 21300000, guid: 68ebc897e47bd0349950142cd406e8b7, type: 3}
