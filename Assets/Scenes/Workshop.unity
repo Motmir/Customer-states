@@ -496,7 +496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &240363806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +578,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.26784933
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -3967,6 +3967,7 @@ MonoBehaviour:
   robotPrefab: {fileID: 3368389557351800027, guid: ffe8e0b93ffd46d4a99f68aa87e9fb4e, type: 3}
   robot: {fileID: 0}
   userInterface: {fileID: 1752850530}
+  scene: 0
 --- !u!4 &2099914366
 Transform:
   m_ObjectHideFlags: 0
