@@ -7,7 +7,7 @@ public class wash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("GameComplete", 3f);
+        Invoke("WashComplete", 3f);
     }
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class wash : MonoBehaviour
         
     }
 
-    private void GameComplete()
+    private void WashComplete()
     {
         GameObject wash = GameObject.Find("Wash");
         wash.SetActive(false);
