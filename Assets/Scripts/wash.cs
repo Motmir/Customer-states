@@ -5,9 +5,9 @@ using UnityEngine;
 public class wash : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        Invoke("GameComplete", 3f);
+        Invoke("GameComplete", 1.1f);
     }
 
     // Update is called once per frame
