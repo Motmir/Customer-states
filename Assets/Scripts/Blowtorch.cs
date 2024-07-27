@@ -21,26 +21,16 @@ public class Blowtorch : MonoBehaviour
         Vector2 mouseDir = worldPos - (new Vector2 (transform.position.x, transform.position.y));
         rb.velocity = mouseDir * 2;
 
-        if (transform.position.x > 0)
+        if (transform.position.x > 4)
         {
-            transform.GetComponent<SpriteRenderer>().flipX = true;
-            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
-        } else
+            transform.rotation = new Quaternion(0f, -1f, 0f, 0f);
+        } else if (transform.position.x < -4)
         {
-            transform.GetComponent<SpriteRenderer>().flipX = false;
-            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+            transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Collided with " + collision);
+        GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>().Blowtorch(collision);
     }
-    //private void OnTriggerStay2D(Collider2D other)
-    //{
-    //    Debug.Log("Obj stays in trigger");
-    //}
-    //private void OnTriggerExit2D(Collider2D other)
-    //{
-    //    Debug.Log("Obj exits trigger");
-    //}
 }
