@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2475015974755963545}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.22935443, w: 0.97334296}
-  m_LocalPosition: {x: 10.438847, y: 1.341476, z: -2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.828, y: 1.5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98,8 +98,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.5376271
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -125,7 +125,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 4334664616071686923}
-  m_BreakForce: Infinity
+  m_BreakForce: 125
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
@@ -202,8 +202,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010342121575827441}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.007376368, w: 0.9999728}
-  m_LocalPosition: {x: 10.51148, y: -1.2820303, z: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.241, y: -1.904, z: -1}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -272,8 +272,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.2753833
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -299,7 +299,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 4334664616071686923}
-  m_BreakForce: Infinity
+  m_BreakForce: 45
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
@@ -342,11 +342,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011958033, y: 0.032884896}
-  m_Size: {x: 0.4454444, y: 1.6831096}
+  m_Offset: {x: 0.016229153, y: 0.0029847026}
+  m_Size: {x: 0.19769955, y: 1.4353651}
   m_Direction: 0
 --- !u!1 &3292900156495002444
 GameObject:
@@ -376,8 +376,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3292900156495002444}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.019485243, w: 0.9998102}
-  m_LocalPosition: {x: 10.691907, y: 0.004481554, z: -2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.458, y: -0.225, z: -2}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -446,8 +446,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.20758295
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -473,7 +473,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 4334664616071686923}
-  m_BreakForce: Infinity
+  m_BreakForce: 45
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
@@ -516,11 +516,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008659244, y: 0.017318726}
-  m_Size: {x: 0.45863175, y: 1.6882627}
+  m_Offset: {x: -0.016969204, y: 0.0045043826}
+  m_Size: {x: 0.15108776, y: 1.4063467}
   m_Direction: 0
 --- !u!1 &3368389557351800027
 GameObject:
@@ -532,7 +532,6 @@ GameObject:
   m_Component:
   - component: {fileID: 464610048114810852}
   - component: {fileID: 6156806906229862707}
-  - component: {fileID: 7265274073063155007}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -548,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3368389557351800027}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10.193001, y: 1.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -588,18 +587,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7265274073063155007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3368389557351800027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b7303a78c15e942891e046bf78cca0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5143808291730261908
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,8 +615,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5143808291730261908}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.04279796, w: 0.9990838}
-  m_LocalPosition: {x: 10.154128, y: 0.2505591, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.8534422, y: -0.03316474, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -747,7 +734,7 @@ Rigidbody2D:
   m_Mass: 1.2176728
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -812,8 +799,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5423381082562094801}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.01151984, w: 0.99993366}
-  m_LocalPosition: {x: 9.678138, y: -1.2241349, z: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.332, y: -1.807, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -882,8 +869,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.20936169
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -909,7 +896,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 4334664616071686923}
-  m_BreakForce: Infinity
+  m_BreakForce: 45
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
@@ -952,11 +939,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011958182, y: 0.020926714}
-  m_Size: {x: 0.44544423, y: 1.6831098}
+  m_Offset: {x: -0.005127907, y: -0.00897342}
+  m_Size: {x: 0.15498543, y: 1.3841077}
   m_Direction: 0
 --- !u!1 &8999341507221962685
 GameObject:
@@ -986,8 +973,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8999341507221962685}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.0056023044, w: 0.9999843}
-  m_LocalPosition: {x: 9.747648, y: 0.06568158, z: -2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.058, y: -0.326, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1056,8 +1043,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.17065874
   m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -1083,7 +1070,7 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 4334664616071686923}
-  m_BreakForce: Infinity
+  m_BreakForce: 45
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
@@ -1126,9 +1113,9 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012989104, y: 0.03030777}
-  m_Size: {x: 0.46729147, y: 1.6969221}
+  m_Offset: {x: -0.016910553, y: -0.07647866}
+  m_Size: {x: 0.1170311, y: 1.4833492}
   m_Direction: 0
