@@ -7,16 +7,16 @@ using UnityEngine.UI;
 public class Punch_minigame : MonoBehaviour
 {
     [SerializeField] private InputAction punchAction;
-    [SerializeField] private GameObject punchPrefab;
     private GameObject progressBar;
     private float progress;
-    GameObject punch;
 
     private void OnEnable()
     {
         punchAction.Enable();
         progress = 0;
         progressBar = GameObject.Find("Bar");
+        Robot robot = GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>();
+        robot.EnablePunch();
         StartCoroutine(ChangeBarColor());
     }
     private void OnDisable()
@@ -66,18 +66,14 @@ public class Punch_minigame : MonoBehaviour
         {
             torso.velocity = Vector2.right * 5;
         }
-
-        Invoke("RemovePunch", 0.2f);
     }
 
-    public void RemovePunch()
-    {
-        Destroy(punch);
-    }
 
     private void GameComplete()
     {
         GameObject minigame = GameObject.Find("Punch");
         minigame.SetActive(false);
+        Robot robot = GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>();
+        robot.DisablePunch();
     }
 }

@@ -12,6 +12,8 @@ public class Robot : MonoBehaviour
     [SerializeField] private GameObject rightLeg;
     [SerializeField] private GameObject leftArm;
     [SerializeField] private GameObject rightArm;
+    [SerializeField] private GameObject leftPunch;
+    [SerializeField] private GameObject rightPunch;
 
     // Start is called before the first frame update
     void Awake()
@@ -49,6 +51,46 @@ public class Robot : MonoBehaviour
 
     }
 
+    public void EnablePunch()
+    {
+        Transform leftPunchTransform = this.gameObject.transform.Find("LeftPunch");
+        if (leftPunchTransform != null)
+        {
+            leftPunch = leftPunchTransform.gameObject;
+        }
+        Transform rightPunchTransform = this.gameObject.transform.Find("RightPunch");
+        if (rightPunchTransform != null)
+        {
+            rightPunch = rightPunchTransform.gameObject;
+        }
+        leftPunch.GetComponent<SpriteRenderer>().enabled = true;
+        rightPunch.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    public void EmitRight()
+    {
+        Debug.Log("Emitting right");
+    }
+
+    public void EmitLeft()
+    {
+        Debug.Log("Emitting left");
+    }
+    public void DisablePunch()
+    {
+        Transform leftPunchTransform = this.gameObject.transform.Find("LeftPunch");
+        if (leftPunchTransform != null)
+        {
+            leftPunch = leftPunchTransform.gameObject;
+        }
+        Transform rightPunchTransform = this.gameObject.transform.Find("RightPunch");
+        if (rightPunchTransform != null)
+        {
+            rightPunch = rightPunchTransform.gameObject;
+        }
+        leftPunch.GetComponent<SpriteRenderer>().enabled = false;
+        rightPunch.GetComponent<SpriteRenderer>().enabled = false;
+    }
 
 
     // Update is called once per frame
