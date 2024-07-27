@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelControl : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class LevelControl : MonoBehaviour
     public GameObject robot;
     [NonSerialized] public bool done;
     [SerializeField] private GameObject userInterface;
+    public int scene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +56,17 @@ public class LevelControl : MonoBehaviour
     private void CloseClaw()
     {
         conveyorClaw.GetComponent<claw>().Close();
+    }
+
+    private void Awake()
+    {
+        scene = SceneManager.GetActiveScene().buildIndex;
+
+        if (scene == 1)
+        {
+            Destroy(GameObject.Find("BackgroundMusic"));
+        }
+
     }
 
 }
