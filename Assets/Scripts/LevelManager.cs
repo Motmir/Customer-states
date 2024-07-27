@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,8 @@ public class LevelControl : MonoBehaviour
     public GameObject conveyorClaw;
 
     [SerializeField] GameObject[] robots;
-    public bool done;
+    [NonSerialized] public bool done;
+    [SerializeField] private GameObject userInterface;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +28,12 @@ public class LevelControl : MonoBehaviour
         if (conveyorArm.transform.position.x <= 0 || 
             (done == true && conveyorArm.transform.position.x <= 500))
         {
-            Debug.Log("Less than 0");
+            userInterface.SetActive(false);
             conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.right * 2;
         }
         else if (conveyorArm.transform.position.x >= 0)
-        { 
-            Debug.Log("More than 0");
+        {
+            userInterface.SetActive(true);
             conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }

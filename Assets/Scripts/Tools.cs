@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Tools : MonoBehaviour
 {
+    [SerializeField] private GameObject screwdriver;
     public void toolOne()
     {
         Debug.Log("Tool number 1 is now active");
+        screwdriver.SetActive(true);
     }
     public void toolTwo()
     {
