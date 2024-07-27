@@ -4000,7 +4000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fde9801499c3947bff466eeca1f7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  robotPrefab: {fileID: 3368389557351800027, guid: 414bfdcd374ec1443a2e122a5ecfb21e, type: 3}
+  robotPrefab: {fileID: 3368389557351800027, guid: 74595164697863c4d97505142c34d297, type: 3}
   robot: {fileID: 0}
   userInterface: {fileID: 1752850530}
   scene: 0
