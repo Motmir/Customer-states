@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Screwdriver : MonoBehaviour
+public class Blowtorch : MonoBehaviour
 {
     public Vector2 screenPosition;
     private Rigidbody2D rb;
 
-   private void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -24,10 +24,11 @@ public class Screwdriver : MonoBehaviour
         if (transform.position.x > 0)
         {
             transform.GetComponent<SpriteRenderer>().flipX = true;
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
         } else
         {
             transform.GetComponent<SpriteRenderer>().flipX = false;
-
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
