@@ -20,6 +20,15 @@ public class Screwdriver : MonoBehaviour
         Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPosition);
         Vector2 mouseDir = worldPos - (new Vector2 (transform.position.x, transform.position.y));
         rb.velocity = mouseDir * 2;
+
+        if (transform.position.x > 0)
+        {
+            transform.GetComponent<SpriteRenderer>().flipX = true;
+        } else
+        {
+            transform.GetComponent<SpriteRenderer>().flipX = false;
+
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

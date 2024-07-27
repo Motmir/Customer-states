@@ -10,7 +10,7 @@ public class LevelControl : MonoBehaviour
     [NonSerialized] public GameObject conveyorClaw;
 
     [SerializeField] GameObject robotPrefab;
-    GameObject robot;
+    public GameObject robot;
     [NonSerialized] public bool done;
     [SerializeField] private GameObject userInterface;
     public int scene;
@@ -48,7 +48,14 @@ public class LevelControl : MonoBehaviour
     public void DiscardDone()
     {
         robot.GetComponent<Robot>().Discard();
+        conveyorClaw.GetComponent<claw>().Open();
         Invoke("setDone", 0.5f);
+        Invoke("CloseClaw", 1f);
+    }
+
+    private void CloseClaw()
+    {
+        conveyorClaw.GetComponent<claw>().Close();
     }
 
     private void Awake()
