@@ -18,7 +18,7 @@ public class LevelControl : MonoBehaviour
     public int scene;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         conveyorArm = GameObject.Find("arm_base");
         conveyorClaw = GameObject.Find("conveyor_claw");

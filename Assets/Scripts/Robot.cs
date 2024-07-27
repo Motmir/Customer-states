@@ -23,12 +23,12 @@ public class Robot : MonoBehaviour
         public bool on;
 
         //Contidtions affecting part
-        public ArrayList head;
-        public ArrayList torso;
-        public ArrayList leftArm;
-        public ArrayList rightArm;
-        public ArrayList leftLeg;
-        public ArrayList rightLeg;
+        public Condititions[] head;
+        public Condititions[] torso;
+        public Condititions[] leftArm;
+        public Condititions[] rightArm;
+        public Condititions[] leftLeg;
+        public Condititions[] rightLeg;
     }
 
     // Start is called before the first frame update

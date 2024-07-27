@@ -12,6 +12,4 @@ public class RobotSet : ScriptableObject
     public Sprite headActive;
     public Sprite Arm;
     public Sprite Leg;
-
-
 }
