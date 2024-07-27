@@ -9,14 +9,17 @@ public class Punch_minigame : MonoBehaviour
     [SerializeField] private InputAction punchAction;
     private GameObject progressBar;
     private float progress;
+    private float punchTime;
+    private Robot robot;
+    private bool isDone;
 
     private void OnEnable()
     {
+        isDone = false;
         punchAction.Enable();
         progress = 0;
         progressBar = GameObject.Find("Bar");
-        Robot robot = GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>();
-        robot.EnablePunch();
+        robot = GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>();
         StartCoroutine(ChangeBarColor());
     }
     private void OnDisable()
@@ -26,24 +29,32 @@ public class Punch_minigame : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (progressBar.GetComponent<Image>().fillAmount < 1)
+        if (progressBar.GetComponent<Image>().fillAmount < 1 && isDone == false)
         {
             if (punchAction.triggered != false)
             {
                 progress = 0.05f;
                 ApplyForce();
+                robot.EnablePunch();
+                punchTime = 0.3f;
             } else
             {
                 progress = -0.003f;
             }
-            
+            punchTime -= Time.deltaTime;
+            if (punchTime <= 0)
+            {
+                robot.DisablePunch();
+            }
             progressBar.GetComponent<Image>().fillAmount += progress;
         } else
         {
+            isDone = true;
+            robot.DisablePunch();
             Invoke("GameComplete", 0.7f);
         }
     }
-
+    
     private IEnumerator ChangeBarColor()
     {
         while (progressBar.GetComponent<Image>().fillAmount < 1)
@@ -71,9 +82,6 @@ public class Punch_minigame : MonoBehaviour
 
     private void GameComplete()
     {
-        GameObject minigame = GameObject.Find("Punch");
-        minigame.SetActive(false);
-        Robot robot = GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>();
-        robot.DisablePunch();
+        this.gameObject.SetActive(false);
     }
 }
