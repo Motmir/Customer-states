@@ -5,16 +5,25 @@ using UnityEngine;
 public class RobotPart : MonoBehaviour
 {
     private Robot robot;
+    public Sprite sprite;
+    public Sprite dirtSprite;
+    private GameObject dirt;
+    private GameObject hurt;
+
 
     private const float interactCooldown = 0.5f;
     private float remainingCooldown = 0;
     // Start is called before the first frame update
-    private int needBlowtorch = 0;
-    private int needScrewdriver = 0;
+    private int isBroken = 6;
+    public bool isDirty = true;
+    private int isLoose = 6;
+
 
 
     void Awake(){
         robot = this.transform.parent.gameObject.GetComponent<Robot>();
+        hurt = this.gameObject.transform.Find("hurt").gameObject;
+        dirt = this.gameObject.transform.Find("dirt").gameObject;
     }
 
     void FixedUpdate()
@@ -26,18 +35,17 @@ public class RobotPart : MonoBehaviour
 
     void Update()
     {
-        if (needBlowtorch>0) {
-            remainingCooldown -= Time.deltaTime;
-        } else {
-
-        }
+        hurt.GetComponent<SpriteMask>().sprite = sprite;
+        dirt.GetComponent<SpriteMask>().sprite = sprite;
+        hurt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isBroken/6);
+        dirt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isDirty ? 1.0f : 0.0f);
     }
 
     public void Screwdriver(){
         if (remainingCooldown >= 0) {
             remainingCooldown = interactCooldown;
-            if (needScrewdriver > 0){
-                needScrewdriver -= 1;
+            if (isLoose > 0){
+                isLoose -= 1;
             }
         }
         
@@ -45,8 +53,8 @@ public class RobotPart : MonoBehaviour
     public void Blowtorch(){
         if (remainingCooldown >= 0) {
             remainingCooldown = interactCooldown;
-            if (needBlowtorch > 0){
-                needBlowtorch -= 1;
+            if (isBroken > 0){
+                isBroken -= 1;
             }
         }    
     }
