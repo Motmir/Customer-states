@@ -18,7 +18,7 @@ public class LevelControl : MonoBehaviour
         conveyorClaw = GameObject.Find("conveyor_arm");
         done = false;
         
-        GameObject robotPrefab = robots[Random.Range(0,robots.Length)];
+        GameObject robotPrefab = robots[UnityEngine.Random.Range(0,robots.Length)];
         Instantiate(robotPrefab, conveyorArm.transform.position, Quaternion.identity);
     }
 

@@ -51,6 +51,7 @@ ExportedObj/
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta
+*.png.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
@@ -73,3 +74,4 @@ crashlytics-build.properties
 .vscode/extensions.json
 .vscode/launch.json
 .vscode/settings.json
+Assets/Sprites/splash.meta
