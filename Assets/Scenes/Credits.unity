@@ -572,8 +572,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Design by:\nMatteo Greco\nEirik Akerhaugen\nMathea Jarbekk\nLise
-    Ullev\xE5lseter\n\n"
+  m_text: 'Game Design by:
+
+    Matteo Greco
+
+    Eirik Akerhaugen
+
+    Mathea Jarbekk
+
+    Lise
+    Ullevaalseter
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
   m_sharedMaterial: {fileID: -8875001340057789191, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
@@ -707,7 +718,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Art By:\nMistStinky\nEmma \xD8sthus (@handy_dandy_candy)\nHelene Torp\n\n"
+  m_text: 'Art By:
+
+    MistStinky
+
+    Emma Oesthus (@handy_dandy_candy)
+
+    Helene
+    Torp
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
   m_sharedMaterial: {fileID: -8875001340057789191, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
@@ -1150,7 +1171,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sound Design by:\nHanna \xD8en"
+  m_text: 'Sound Design by:
+
+    Hanna Oeen'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
   m_sharedMaterial: {fileID: -8875001340057789191, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}

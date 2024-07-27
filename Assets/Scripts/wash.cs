@@ -14,6 +14,7 @@ public class wash : MonoBehaviour
     private void GameComplete()
     {
         GameObject wash = GameObject.Find("Wash");
+        GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>().Wash();
         wash.SetActive(false);
     }
 }
