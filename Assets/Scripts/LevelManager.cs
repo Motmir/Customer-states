@@ -45,7 +45,14 @@ public class LevelControl : MonoBehaviour
     public void DiscardDone()
     {
         robot.GetComponent<Robot>().Discard();
+        conveyorClaw.GetComponent<claw>().Open();
         Invoke("setDone", 0.5f);
+        Invoke("CloseClaw", 1f);
+    }
+
+    private void CloseClaw()
+    {
+        conveyorClaw.GetComponent<claw>().Close();
     }
 
 }
