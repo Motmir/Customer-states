@@ -425,11 +425,11 @@ Transform:
   m_GameObject: {fileID: 513131392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1029.2306, y: 590.79584, z: -6.128098}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2003990685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &513131394
 AudioSource:
@@ -441,7 +441,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6393567606466913629, guid: a091baa3a29642b448e748f459ea0f98, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4da5dbf16daf75e4db5fa93e4f696931, type: 3}
+  m_audioClip: {fileID: 8300000, guid: da7f352adf9da0c4895e9348f4f09011, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2057,12 +2057,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787739864}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 454.4051, y: 259.5565, z: 0.5211334}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -574.8255, y: -331.23935, z: 6.6492314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2003990685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1787739868
 MonoBehaviour:
@@ -2385,7 +2385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2003990685}
   m_Layer: 0
-  m_Name: SFX Audio
+  m_Name: SoundEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2403,7 +2403,9 @@ Transform:
   m_LocalPosition: {x: 1029.2306, y: 590.79584, z: -6.128098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 513131393}
+  - {fileID: 1787739867}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
@@ -2415,6 +2417,4 @@ SceneRoots:
   - {fileID: 1946470211}
   - {fileID: 400492386}
   - {fileID: 1263320306}
-  - {fileID: 1787739867}
-  - {fileID: 513131393}
   - {fileID: 2003990685}
