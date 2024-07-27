@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8d46d2dda5bab4386f2fe697bae8a9, type: 3}
+  m_Name: Caroline
+  m_EditorClassIdentifier: 
+  torsoOff: {fileID: 21300000, guid: 98590a5aeda0c924bbfd7c288a15637b, type: 3}
+  torsoOn: {fileID: 21300000, guid: 0e3d3f182df937e47bebab64cd3a1cc9, type: 3}
+  headOff: {fileID: 21300000, guid: a410f7f9bc677574ca4b721ad5e67b0d, type: 3}
+  headOn: {fileID: 21300000, guid: 72bf5b3988b045647a617623b1d1e256, type: 3}
+  headActive: {fileID: 21300000, guid: 5b01b8aa037e4ca4bbc47b22a60dc58c, type: 3}
+  Arm: {fileID: 21300000, guid: 519466b86e3548a43a5fddf803d1c328, type: 3}
+  Leg: {fileID: 21300000, guid: a10833d78f4790d499be029a7bfd49b3, type: 3}
