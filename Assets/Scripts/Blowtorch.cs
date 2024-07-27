@@ -31,6 +31,9 @@ public class Blowtorch : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>().Blowtorch(collision);
+        RobotPart part = collision.transform.GetComponent<RobotPart>();
+        if(part != null){
+		    part.Blowtorch();
+	    }
     }
 }
