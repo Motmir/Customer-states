@@ -20,5 +20,6 @@ public class Treatments : MonoBehaviour
     public void treatmentThree()
     {
         Debug.Log("Treatment number 3 is now active");
+        GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>().TogglePower();
     }
 }

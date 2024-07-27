@@ -22,7 +22,7 @@ public class LevelControl : MonoBehaviour
         conveyorClaw = GameObject.Find("conveyor_claw");
         done = false;
         
-        robot = Instantiate(this.robotPrefab, conveyorArm.transform.position, Quaternion.identity);
+        robot = Instantiate(this.robotPrefab, Camera.main.ScreenToWorldPoint(conveyorArm.transform.position), Quaternion.identity);
     }
 
     // Update is called once per frame
