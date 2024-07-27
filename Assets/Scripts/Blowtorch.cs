@@ -19,7 +19,8 @@ public class Blowtorch : MonoBehaviour
         screenPosition = Input.mousePosition;
         Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPosition);
         Vector2 mouseDir = worldPos - (new Vector2 (transform.position.x, transform.position.y));
-        rb.velocity = mouseDir * 2;
+        Vector2 sqMouseDir = new Vector2(mouseDir.x * (Mathf.Abs(mouseDir.x) + 5), mouseDir.y * (Mathf.Abs(mouseDir.y) + 5));
+        rb.velocity = sqMouseDir;
 
         if (transform.position.x > 4)
         {
