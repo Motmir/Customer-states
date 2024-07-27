@@ -36,6 +36,9 @@ public class Punch_minigame : MonoBehaviour
             }
             
             progressBar.GetComponent<Image>().fillAmount += progress;
+        } else
+        {
+            Invoke("GameComplete", 0.7f);
         }
     }
 
@@ -59,5 +62,11 @@ public class Punch_minigame : MonoBehaviour
         {
             torso.velocity = Vector2.right * 5;
         }
+    }
+
+    private void GameComplete()
+    {
+        GameObject minigame = GameObject.Find("Punch");
+        minigame.SetActive(false);
     }
 }
