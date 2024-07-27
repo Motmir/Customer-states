@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Treatments : MonoBehaviour
 {
-    public GameObject punchMinigame;
+    [SerializeField] private GameObject punchMinigame;
+    [SerializeField] private GameObject wash;
+
     public void treatmentOne()
     {
         Debug.Log("Treatment number 1 is now active");
@@ -13,6 +15,7 @@ public class Treatments : MonoBehaviour
     public void treatmentTwo()
     {
         Debug.Log("Treatment number 2 is now active");
+        wash.SetActive(true);
     }
     public void treatmentThree()
     {
