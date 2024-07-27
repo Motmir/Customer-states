@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class RobotPart : MonoBehaviour
 {
-    private const int interactCooldown = 2;
+    private Robot robot;
+
+    private const float interactCooldown = 0.5f;
     private float remainingCooldown = 0;
     // Start is called before the first frame update
+    private int needBlowtorch = 0;
+    private int needScrewdriver = 0;
+
+
+    void Awake(){
+        robot = this.transform.parent.gameObject.GetComponent<Robot>();
+    }
+
     void FixedUpdate()
     {
         if (remainingCooldown > 0) {
@@ -14,17 +24,30 @@ public class RobotPart : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (needBlowtorch>0) {
+            remainingCooldown -= Time.deltaTime;
+        } else {
+
+        }
+    }
+
     public void Screwdriver(){
         if (remainingCooldown >= 0) {
             remainingCooldown = interactCooldown;
-            Debug.Log(this.name);
+            if (needScrewdriver > 0){
+                needScrewdriver -= 1;
+            }
         }
         
     }
     public void Blowtorch(){
         if (remainingCooldown >= 0) {
             remainingCooldown = interactCooldown;
-            Debug.Log(this.name);
+            if (needBlowtorch > 0){
+                needBlowtorch -= 1;
+            }
         }    
     }
 }
