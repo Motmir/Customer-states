@@ -30,16 +30,8 @@ public class Screwdriver : MonoBehaviour
             transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Collided with " + collision);
+        GameObject.Find("LevelMaganer").GetComponent<LevelControl>().robot.GetComponent<Robot>().Screwdriver(collision);
     }
-    //private void OnTriggerStay2D(Collider2D other)
-    //{
-    //    Debug.Log("Obj stays in trigger");
-    //}
-    //private void OnTriggerExit2D(Collider2D other)
-    //{
-    //    Debug.Log("Obj exits trigger");
-    //}
 }
