@@ -16,8 +16,8 @@ public class Punch_minigame : MonoBehaviour
         progress = 0;
         progressBar = GameObject.Find("Bar");
         Robot robot = GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>();
-        robot.
-            StartCoroutine(ChangeBarColor());
+        robot.EnablePunch();
+        StartCoroutine(ChangeBarColor());
     }
     private void OnDisable()
     {
@@ -73,5 +73,7 @@ public class Punch_minigame : MonoBehaviour
     {
         GameObject minigame = GameObject.Find("Punch");
         minigame.SetActive(false);
+        Robot robot = GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>();
+        robot.DisablePunch();
     }
 }
