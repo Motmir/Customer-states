@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8d46d2dda5bab4386f2fe697bae8a9, type: 3}
+  m_Name: Orbot
+  m_EditorClassIdentifier: 
+  torsoOff: {fileID: 21300000, guid: 976d1c5fad537ac43a86d9f3c9f5dbb6, type: 3}
+  torsoOn: {fileID: 21300000, guid: 4b689f9575fbd694999618a04cb48d70, type: 3}
+  headOff: {fileID: 21300000, guid: 656b8033dda1e8d4a85301fda3ef2827, type: 3}
+  headOn: {fileID: 21300000, guid: d3621109ff8a0684d9a7a92af0ac2465, type: 3}
+  headActive: {fileID: 21300000, guid: b82986101d3a7ac4fbd71a346d8366db, type: 3}
+  Arm: {fileID: 21300000, guid: ae3ca716a2714c2428b141cf44df124d, type: 3}
+  Leg: {fileID: 21300000, guid: 5c7b44f121301bb40aec37df69649be3, type: 3}

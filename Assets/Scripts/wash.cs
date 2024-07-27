@@ -10,15 +10,11 @@ public class wash : MonoBehaviour
         Invoke("GameComplete", 1.1f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void GameComplete()
     {
         GameObject wash = GameObject.Find("Wash");
+        GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>().Wash();
         wash.SetActive(false);
     }
 }

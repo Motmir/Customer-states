@@ -19,7 +19,8 @@ public class Screwdriver : MonoBehaviour
         screenPosition = Input.mousePosition;
         Vector2 worldPos = Camera.main.ScreenToWorldPoint(screenPosition);
         Vector2 mouseDir = worldPos - (new Vector2 (transform.position.x, transform.position.y));
-        rb.velocity = mouseDir * 2;
+        Vector2 sqMouseDir = new Vector2(mouseDir.x * (Mathf.Abs(mouseDir.x) + 5), mouseDir.y * (Mathf.Abs(mouseDir.y) + 5));
+        rb.velocity = sqMouseDir;
 
         if (transform.position.x > 4)
         {
@@ -37,5 +38,12 @@ public class Screwdriver : MonoBehaviour
         if(part != null){
 		    part.Screwdriver();
 	    }
+        transform.GetChild(0).gameObject.SetActive(true);
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
+    }
+
 }
