@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class LevelControl : MonoBehaviour
 {
     [NonSerialized] public GameObject conveyorArm;
@@ -11,6 +12,7 @@ public class LevelControl : MonoBehaviour
 
     [SerializeField] GameObject robotPrefab;
     public GameObject robot;
+    public Robot roboScript;
     [NonSerialized] public bool done;
     [SerializeField] private GameObject userInterface;
     public int scene;
@@ -24,6 +26,7 @@ public class LevelControl : MonoBehaviour
         float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
+        roboScript = robot.GetComponent<Robot>();
     }
 
     // Update is called once per frame

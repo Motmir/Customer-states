@@ -15,6 +15,22 @@ public class Robot : MonoBehaviour
     [SerializeField] private GameObject leftPunch;
     [SerializeField] private GameObject rightPunch;
 
+    public enum Condititions { Battered, Bloody, Dirty, Screw }
+    public struct RobotInstance
+    {
+        public string partsSet;
+        public bool evil;
+        public bool on;
+
+        //Contidtions affecting part
+        public ArrayList head;
+        public ArrayList torso;
+        public ArrayList leftArm;
+        public ArrayList rightArm;
+        public ArrayList leftLeg;
+        public ArrayList rightLeg;
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
