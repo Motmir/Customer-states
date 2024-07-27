@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+
 public class Punch_minigame : MonoBehaviour
 {
     [SerializeField] private InputAction punchAction;
@@ -12,6 +13,7 @@ public class Punch_minigame : MonoBehaviour
     private float punchTime;
     private Robot robot;
     private bool isDone;
+    
 
     private void OnEnable()
     {
@@ -37,6 +39,7 @@ public class Punch_minigame : MonoBehaviour
                 ApplyForce();
                 robot.EnablePunch();
                 punchTime = 0.3f;
+                GetComponent<AudioSource>().Play();
             } else
             {
                 progress = -0.003f;
