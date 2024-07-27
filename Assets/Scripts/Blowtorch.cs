@@ -7,6 +7,7 @@ public class Blowtorch : MonoBehaviour
 {
     public Vector2 screenPosition;
     private Rigidbody2D rb;
+  
 
     private void Start()
     {
@@ -36,5 +37,15 @@ public class Blowtorch : MonoBehaviour
         if(part != null){
 		    part.Blowtorch();
 	    }
+    }
+
+   public void OnEnable()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
+    public void OnDisable()
+    {
+    GetComponent<AudioSource>().Stop(); 
     }
 }
