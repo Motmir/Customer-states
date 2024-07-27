@@ -126,20 +126,20 @@ HingeJoint2D:
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 4334664616071686923}
-  m_BreakForce: 250
+  m_BreakForce: 50
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0.059078567, y: 0.16476732}
   m_ConnectedAnchor: {x: -0.0010496107, y: 0.22686559}
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: 0
+    m_MotorSpeed: -53.1
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 92.3
-    m_UpperAngle: 121.5
+    m_LowerAngle: -14.6
+    m_UpperAngle: 37.9
 --- !u!60 &4093972797879624548
 PolygonCollider2D:
   m_ObjectHideFlags: 0
