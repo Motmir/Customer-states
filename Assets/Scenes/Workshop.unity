@@ -3547,10 +3547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fde9801499c3947bff466eeca1f7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conveyorArm: {fileID: 0}
-  conveyorClaw: {fileID: 0}
-  robots:
-  - {fileID: 3368389557351800027, guid: ffe8e0b93ffd46d4a99f68aa87e9fb4e, type: 3}
+  robotPrefab: {fileID: 3368389557351800027, guid: ffe8e0b93ffd46d4a99f68aa87e9fb4e, type: 3}
   userInterface: {fileID: 1752850530}
 --- !u!4 &2099914366
 Transform:
