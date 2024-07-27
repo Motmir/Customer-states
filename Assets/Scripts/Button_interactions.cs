@@ -14,8 +14,6 @@ public class Button_interactions : MonoBehaviour
 
     public void Discard()
     {
-        GameObject torso = GameObject.Find("torso");
-        torso.GetComponent<HingeJoint2D>().enabled = false;
-        manager.discardDone();
+        manager.DiscardDone();
     }
 }
