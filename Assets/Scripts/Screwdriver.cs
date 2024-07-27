@@ -21,13 +21,13 @@ public class Screwdriver : MonoBehaviour
         Vector2 mouseDir = worldPos - (new Vector2 (transform.position.x, transform.position.y));
         rb.velocity = mouseDir * 2;
 
-        if (transform.position.x > 0)
+        if (transform.position.x > 4)
         {
-            transform.GetComponent<SpriteRenderer>().flipX = true;
-        } else
+            transform.rotation = new Quaternion(0f, -1f, 0f, 0f);
+        }
+        else if (transform.position.x < -4)
         {
-            transform.GetComponent<SpriteRenderer>().flipX = false;
-
+            transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
