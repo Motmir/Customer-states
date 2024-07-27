@@ -32,6 +32,6 @@ public class Screwdriver : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        GameObject.Find("LevelMaganer").GetComponent<LevelControl>().robot.GetComponent<Robot>().Screwdriver(collision);
+        GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>().Screwdriver(collision);
     }
 }
