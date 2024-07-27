@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class Punch_minigame : MonoBehaviour
 {
     [SerializeField] private InputAction punchAction;
+    [SerializeField] private GameObject punchPrefab;
     private GameObject progressBar;
     private float progress;
+    GameObject punch;
 
     private void OnEnable()
     {
@@ -58,10 +60,19 @@ public class Punch_minigame : MonoBehaviour
         if (option == 1)
         {
             torso.velocity = Vector2.left * 5;
-        } else if (option == 2)
+
+        }
+        else if (option == 2)
         {
             torso.velocity = Vector2.right * 5;
         }
+
+        Invoke("RemovePunch", 0.2f);
+    }
+
+    public void RemovePunch()
+    {
+        Destroy(punch);
     }
 
     private void GameComplete()

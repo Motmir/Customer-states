@@ -474,6 +474,7 @@ MonoBehaviour:
       m_Action: Punch
       m_Flags: 0
     m_Flags: 0
+  punchPrefab: {fileID: 1932165514216525193, guid: 16cc124c28b208d409cd5c99c89bc00b, type: 3}
 --- !u!1 &279997434
 GameObject:
   m_ObjectHideFlags: 0

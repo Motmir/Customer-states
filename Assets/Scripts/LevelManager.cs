@@ -9,7 +9,7 @@ public class LevelControl : MonoBehaviour
     [NonSerialized] public GameObject conveyorClaw;
 
     [SerializeField] GameObject robotPrefab;
-    GameObject robot;
+    public GameObject robot;
     [NonSerialized] public bool done;
     [SerializeField] private GameObject userInterface;
     // Start is called before the first frame update
