@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class LevelControl : MonoBehaviour
 {
-    GameObject conveyorArm;
-    [SerializeField] private GameObject userInterface;
+    [NonSerialized] public GameObject conveyorArm;
+    [NonSerialized] public GameObject conveyorClaw;
+
+    [SerializeField] GameObject robotPrefab;
+    GameObject robot;
     [NonSerialized] public bool done;
+    [SerializeField] private GameObject userInterface;
     // Start is called before the first frame update
     void Start()
     {
         conveyorArm = GameObject.Find("arm_base");
+        conveyorClaw = GameObject.Find("conveyor_arm");
         done = false;
+        
+        robot = Instantiate(this.robotPrefab, conveyorArm.transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -35,8 +42,9 @@ public class LevelControl : MonoBehaviour
     {
         done = true;
     }
-    public void discardDone()
+    public void DiscardDone()
     {
+        robot.GetComponent<Robot>().Discard();
         Invoke("setDone", 0.5f);
     }
 
