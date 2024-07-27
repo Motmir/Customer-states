@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Screwdriver : MonoBehaviour
+public class Blowtorch : MonoBehaviour
 {
     public Vector2 screenPosition;
     private Rigidbody2D rb;
 
-   private void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -24,14 +24,13 @@ public class Screwdriver : MonoBehaviour
         if (transform.position.x > 4)
         {
             transform.rotation = new Quaternion(0f, -1f, 0f, 0f);
-        }
-        else if (transform.position.x < -4)
+        } else if (transform.position.x < -4)
         {
             transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>().Screwdriver(collision);
+        GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>().Blowtorch(collision);
     }
 }

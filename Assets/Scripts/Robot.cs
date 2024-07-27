@@ -15,6 +15,13 @@ public class Robot : MonoBehaviour
         torso.GetComponent<HingeJoint2D>().connectedBody = manager.conveyorClaw.GetComponent<Rigidbody2D>();
     }
 
+    public void Screwdriver(Collider2D part){
+        Debug.Log(part.name);
+    }
+    public void Blowtorch(Collider2D part){
+        Debug.Log(part.name);
+    }
+
     // Update is called once per frame
     public void Discard()
     {
