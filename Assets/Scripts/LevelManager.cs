@@ -16,7 +16,7 @@ public class LevelControl : MonoBehaviour
     void Start()
     {
         conveyorArm = GameObject.Find("arm_base");
-        conveyorClaw = GameObject.Find("conveyor_arm");
+        conveyorClaw = GameObject.Find("conveyor_claw");
         done = false;
         
         robot = Instantiate(this.robotPrefab, conveyorArm.transform.position, Quaternion.identity);
