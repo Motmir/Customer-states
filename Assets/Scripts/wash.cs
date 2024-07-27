@@ -10,11 +10,6 @@ public class wash : MonoBehaviour
         Invoke("GameComplete", 1.1f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void GameComplete()
     {
