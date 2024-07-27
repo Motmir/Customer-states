@@ -53,43 +53,35 @@ public class Robot : MonoBehaviour
 
     public void EnablePunch()
     {
-        Transform leftPunchTransform = this.gameObject.transform.Find("LeftPunch");
-        if (leftPunchTransform != null)
-        {
-            leftPunch = leftPunchTransform.gameObject;
-        }
-        Transform rightPunchTransform = this.gameObject.transform.Find("RightPunch");
-        if (rightPunchTransform != null)
-        {
-            rightPunch = rightPunchTransform.gameObject;
-        }
         leftPunch.GetComponent<SpriteRenderer>().enabled = true;
         rightPunch.GetComponent<SpriteRenderer>().enabled = true;
+        leftPunch.GetComponent<Animator>().enabled = true;
+        rightPunch.GetComponent<Animator>().enabled = true;
     }
 
     public void EmitRight()
     {
+        GameObject scraps = GameObject.Find("RightPunch/scraps");
+        GameObject sparks = GameObject.Find("RightPunch/sparks");
+        scraps.GetComponent<ParticleSystem>().Emit(5);
+        sparks.GetComponent<ParticleSystem>().Emit(5);
         Debug.Log("Emitting right");
     }
 
     public void EmitLeft()
     {
+        GameObject scraps = GameObject.Find("LeftPunch/scraps");
+        GameObject sparks = GameObject.Find("LeftPunch/sparks");
+        scraps.GetComponent<ParticleSystem>().Emit(5);
+        sparks.GetComponent<ParticleSystem>().Emit(5);
         Debug.Log("Emitting left");
     }
     public void DisablePunch()
     {
-        Transform leftPunchTransform = this.gameObject.transform.Find("LeftPunch");
-        if (leftPunchTransform != null)
-        {
-            leftPunch = leftPunchTransform.gameObject;
-        }
-        Transform rightPunchTransform = this.gameObject.transform.Find("RightPunch");
-        if (rightPunchTransform != null)
-        {
-            rightPunch = rightPunchTransform.gameObject;
-        }
         leftPunch.GetComponent<SpriteRenderer>().enabled = false;
         rightPunch.GetComponent<SpriteRenderer>().enabled = false;
+        leftPunch.GetComponent<Animator>().enabled = false;
+        rightPunch.GetComponent<Animator>().enabled = false;
     }
 
 
