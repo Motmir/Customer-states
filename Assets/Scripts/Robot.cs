@@ -32,5 +32,9 @@ public class Robot : MonoBehaviour
     public void Discard()
     {
         torso.GetComponent<HingeJoint2D>().enabled = false;
-    }   
+    }
+    public void TogglePower()
+    {
+
+    }
 }

@@ -21,8 +21,9 @@ public class LevelControl : MonoBehaviour
         conveyorArm = GameObject.Find("arm_base");
         conveyorClaw = GameObject.Find("conveyor_claw");
         done = false;
-        
-        robot = Instantiate(this.robotPrefab, conveyorArm.transform.position, Quaternion.identity);
+        float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
+        float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
+        robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
