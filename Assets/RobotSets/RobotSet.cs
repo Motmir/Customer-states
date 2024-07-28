@@ -10,6 +10,8 @@ public class RobotSet : ScriptableObject
     public Sprite headOff;
     public Sprite headOn;
     public Sprite headActive;
-    public Sprite Arm;
-    public Sprite Leg;
+    public Sprite arm;
+    public Sprite leg;
+
+
 }
