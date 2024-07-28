@@ -8,12 +8,14 @@ public class Robot : MonoBehaviour
     public enum RobotSetName { 
         Random, 
         Roomba,
+        SecretaryGlasses,
         Caroline,
         Handsome,
         Maid,
-        BlaBot,
         Orbot,
-        Tanner
+        Tanner,
+        Scrappy,
+        TVbot
     }
     public enum Dirt {None, Bloody, Dirty, Screw , Drawing, Oil}
 
@@ -46,17 +48,17 @@ public class Robot : MonoBehaviour
         somethingWrong = instance.somethingWrong;
         if (instance.partsSet == RobotSetName.Random ){
             int length = Enum.GetValues(typeof(RobotSetName)).Length;
-            int set = UnityEngine.Random.Range(2, length) - 1;
+            int set = UnityEngine.Random.Range(3, length) - 1;
             headSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             torsoSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             leftLegSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             rightLegSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             leftArmSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             rightArmSet =  manager.robotSets[set];
         } else {
             int set = (int)instance.partsSet - 1;
