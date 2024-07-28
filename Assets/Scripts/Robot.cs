@@ -39,8 +39,8 @@ public class Robot : MonoBehaviour
     private RobotSet rightLegSet;
     private RobotSet leftArmSet;
     private RobotSet rightArmSet;
-    private bool evil = false;
-    private bool somethingWrong = false;
+    public bool evil = false;
+    public bool somethingWrong = false;
     public bool on = false;
 
     public void Init(RobotInstanceInfo instance){

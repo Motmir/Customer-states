@@ -15,9 +15,9 @@ public class RobotPart : MonoBehaviour
     private const float interactCooldown = 2f;
     private float remainingCooldown = 0;
     // Start is called before the first frame update
-    private int isBroken = 6;
+    public int isBroken = 6;
     public bool isDirty = true;
-    private int isLoose = 6;
+    public int isLoose = 6;
 
 
 
