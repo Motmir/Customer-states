@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DialogueInfo : ScriptableObject
 {
-    public string name;
+    public string robotName;
+    public bool dialogueStarted = false;
 
     [TextArea(3, 10)]
     public string[] sentences;

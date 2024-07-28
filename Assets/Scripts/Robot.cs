@@ -37,7 +37,7 @@ public class Robot : MonoBehaviour
     private RobotSet rightArmSet;
     private bool evil = false;
     private bool somethingWrong = false;
-    private bool on = false;
+    public bool on = false;
 
     public void Init(RobotInstanceInfo instance){
         evil = instance.evil;
@@ -70,7 +70,7 @@ public class Robot : MonoBehaviour
             if(on){
                 head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
             } else {
-                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
+                head.GetComponent<SpriteRenderer>().sprite = headSet.headOff;
             }
         }
         if (torso) {
@@ -198,7 +198,7 @@ public class Robot : MonoBehaviour
             if(on){
                 head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
             } else {
-                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
+                head.GetComponent<SpriteRenderer>().sprite = headSet.headOff;
             }
         }
         if (torso) {

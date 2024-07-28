@@ -42,6 +42,8 @@ public class Blowtorch : MonoBehaviour
    public void OnEnable()
     {
         GetComponent<AudioSource>().Play();
+        Vector2 loc = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector2(loc.x, loc.y);
     }
 
     public void OnDisable()

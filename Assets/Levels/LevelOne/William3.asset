@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partsSet: 3
   evil: 0
-  on: 1
+  on: 0
   somethingWrong: 0
   head: 00000000
   torso: 
@@ -23,3 +23,4 @@ MonoBehaviour:
   leftLeg: 
   rightLeg: 
   dialogue: {fileID: 11400000, guid: fd87f9070c7058a489b52be9692cb564, type: 2}
+  customerNote: {fileID: 0}
