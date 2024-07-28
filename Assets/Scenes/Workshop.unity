@@ -12745,6 +12745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robotSets:
+  - {fileID: 11400000, guid: 3039196e26782a6439d53026f4f731a6, type: 2}
   - {fileID: 11400000, guid: 7cf78ae4c32f60942b7b218ef18bab4d, type: 2}
   - {fileID: 11400000, guid: 8a8077b8abb5b2c4a9e2085efbfff9a4, type: 2}
   - {fileID: 11400000, guid: 208bfe64c1ba970429299b02f7d1e820, type: 2}
@@ -12752,9 +12753,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 53eecaa74072c0940ae158681498371f, type: 2}
   - {fileID: 11400000, guid: b5e5961483d7d344fa9aaf7292b36a7c, type: 2}
   - {fileID: 11400000, guid: fd00278970ba18a4f857024be811f550, type: 2}
+  - {fileID: 11400000, guid: 8ca53ee1857d39645879a1da3a476cba, type: 2}
+  - {fileID: 11400000, guid: 8ebec534b8457834ebdd05fbba152968, type: 2}
   robotPrefab: {fileID: 3368389557351800027, guid: 74595164697863c4d97505142c34d297, type: 3}
   levels:
   - {fileID: 11400000, guid: 9d54224e878aad54ba13cd5a09ec844d, type: 2}
+  - {fileID: 11400000, guid: 3da6a99c843311842a829af1cd6854dd, type: 2}
   screwdriver: {fileID: 1916052360}
   blowtorch: {fileID: 240363805}
   note: {fileID: 456019564}
