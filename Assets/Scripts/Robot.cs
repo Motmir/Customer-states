@@ -60,7 +60,6 @@ public class Robot : MonoBehaviour
             robotPart.set =  manager.robotSets[set];
         }
 
-        Debug.Log(partInstance.dirt + " ?= " + RobotPart.Dirt.None);
         if (partInstance.dirt != RobotPart.Dirt.None)
         {
             robotPart.dirtSprite = manager.dirts[(int)partInstance.dirt - 1];

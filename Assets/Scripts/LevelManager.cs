@@ -64,7 +64,7 @@ public class LevelControl : MonoBehaviour
 
     public void FetchNextRobot()
     {
-        if (robots.Count == 0) { NextLevel(); }
+        if (robots.Count - 1 == 0) { NextLevel(); return; }
         float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
@@ -89,6 +89,7 @@ public class LevelControl : MonoBehaviour
         DisableRobotCollision();
         Invoke("EnableRobotCollision", 1f);
         GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>().getStuff();
+        Debug.Log(currRobot.partsSet);
     }
 
     void LoadLevel(LevelInfo level)
@@ -106,7 +107,6 @@ public class LevelControl : MonoBehaviour
     {
         currentLevel++;
         LoadLevel(levels[currentLevel]);
-        FetchNextRobot();
     }
 
     // Update is called once per frame
