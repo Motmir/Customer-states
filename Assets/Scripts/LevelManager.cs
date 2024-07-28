@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,6 +27,28 @@ public class LevelControl : MonoBehaviour
     private GameObject crane;
     private Queue<RobotInstanceInfo> robots;
     RobotInstanceInfo currRobot;
+    private int currentLevel = 0;
+
+    private string[] firstNames =
+    {
+        "John",
+        "William",
+        "Auburn",
+        "Liz",
+        "Nessie",
+        "Zenith",
+        "Mark"
+    };
+    private string[] lastNames =
+    {
+        "Smith",
+        "Woodcoffin",
+        "Ghost",
+        "Ullbir",
+        "Lock",
+        "Silverpheonix",
+        "Cowster"
+    };
 
 
     // Start is called before the first frame update
@@ -39,16 +59,27 @@ public class LevelControl : MonoBehaviour
         conveyorClaw = GameObject.Find("conveyor_claw");
         done = false;
         crane = GameObject.Find("Crane");
-        LoadLevel(levels[0]);
+        LoadLevel(levels[currentLevel]);
     }
 
     public void FetchNextRobot()
     {
+        if (robots.Count == 0) { NextLevel(); }
         float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
         currRobot = robots.Dequeue();
-        ownerName.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.ownerName;
+        if (currRobot.customerNote.ownerName != "")
+        {
+            ownerName.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.ownerName;
+        }
+        else
+        {
+            int randOne = UnityEngine.Random.Range(0, firstNames.Length - 1);
+            int randTwo = UnityEngine.Random.Range(0, firstNames.Length - 1);
+            ownerName.GetComponent<TextMeshProUGUI>().text = firstNames[randOne] + " " + lastNames[randTwo];
+        }
+        FindObjectOfType<DialogueManager>().EndDialogue();
         note.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.customerNote;
         robot.GetComponent<Robot>().Init(currRobot);
         if (currRobot.dialogue != null)
@@ -56,7 +87,8 @@ public class LevelControl : MonoBehaviour
             currRobot.dialogue.dialogueStarted = false;
         }
         DisableRobotCollision();
-        Invoke("EnableRobotCollision", 2f);
+        Invoke("EnableRobotCollision", 1f);
+        GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>().getStuff();
     }
 
     void LoadLevel(LevelInfo level)
@@ -67,6 +99,13 @@ public class LevelControl : MonoBehaviour
         {
             robots.Enqueue(bot);
         }
+        FetchNextRobot();
+    }
+
+    void NextLevel()
+    {
+        currentLevel++;
+        LoadLevel(levels[currentLevel]);
         FetchNextRobot();
     }
 
@@ -103,6 +142,7 @@ public class LevelControl : MonoBehaviour
             conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             if (conveyorArm.transform.position.x >= 15)
             {
+                GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>().calculateRobotScore();
                 Destroy(robot);
                 crane.SetActive(false);
                 conveyorArm.transform.position = new Vector3(-25, 3.88f, -0.1f);
@@ -118,7 +158,10 @@ public class LevelControl : MonoBehaviour
         //Disable torso
         robot.GetComponentInChildren<BoxCollider2D>().enabled = false;
         //Disable the rest
-        robot.GetComponentInChildren<CapsuleCollider2D>().enabled = false;
+        foreach (var comp in robot.GetComponentsInChildren<CapsuleCollider2D>())
+        {
+            comp.enabled = false;
+        }
     }
 
     public void EnableRobotCollision()
@@ -126,7 +169,14 @@ public class LevelControl : MonoBehaviour
         //Enable torso
         robot.GetComponentInChildren<BoxCollider2D>().enabled = true;
         //Enable the rest
-        robot.GetComponentInChildren<CapsuleCollider2D>().enabled = true;
+        foreach (var comp in robot.GetComponentsInChildren<CapsuleCollider2D>())
+        {
+            comp.enabled = true;
+        }
+        foreach (var hinge in robot.GetComponentsInChildren<HingeJoint2D>())
+        {
+            hinge.useLimits = false;
+        }
     }
 
     public void setDone()

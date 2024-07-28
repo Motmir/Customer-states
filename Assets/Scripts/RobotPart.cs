@@ -24,7 +24,6 @@ public class RobotPart : MonoBehaviour
     private GameObject screw;
     private const float interactCooldown = 2f;
     private float remainingCooldown = 0;
-    // Start is called before the first frame update
     [System.NonSerialized] public int isBroken = 0;
     [System.NonSerialized] public bool isDirty = false;
     [System.NonSerialized] public int isLoose = 0;

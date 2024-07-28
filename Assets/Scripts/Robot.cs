@@ -9,12 +9,13 @@ public class Robot : MonoBehaviour
         Random, 
         Roomba,
         SecretaryGlasses,
-        Caroline,
+        Secretary,
         Handsome,
         Maid,
         Orbot,
         Tanner,
         Scrappy,
+        Caroline,
         TVbot
     }
 
@@ -30,8 +31,8 @@ public class Robot : MonoBehaviour
     [SerializeField] private GameObject leftPunch;
     [SerializeField] private GameObject rightPunch;
 
-    private bool evil = false;
-    private bool somethingWrong = false;
+    public bool evil = false;
+    public bool somethingWrong = false;
     public bool on = false;
 
     public void Init(RobotInstanceInfo instance){
