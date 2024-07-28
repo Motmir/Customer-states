@@ -735,7 +735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &3137815010481955173
@@ -900,6 +899,7 @@ GameObject:
   - component: {fileID: 3820148471508879742}
   - component: {fileID: 1055941125666548181}
   - component: {fileID: 785205738824080250}
+  - component: {fileID: 2654163352452134397}
   m_Layer: 0
   m_Name: rightLeg
   m_TagString: Untagged
@@ -1076,9 +1076,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
   dirtSprite: {fileID: 0}
   isDirty: 1
+--- !u!210 &2654163352452134397
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010342121575827441}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &3135176782141230929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &8444331674223407569
@@ -6825,7 +6835,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &7283595224335272713
@@ -11744,6 +11753,7 @@ GameObject:
   - component: {fileID: 5978011916857496471}
   - component: {fileID: 8938456238530901541}
   - component: {fileID: 6983167619113194899}
+  - component: {fileID: 3618094354989331338}
   m_Layer: 0
   m_Name: leftLeg
   m_TagString: Untagged
@@ -11920,9 +11930,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
   dirtSprite: {fileID: 0}
   isDirty: 1
+--- !u!210 &3618094354989331338
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5423381082562094801}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &5546395546904289383
 GameObject:
   m_ObjectHideFlags: 0
@@ -32158,7 +32179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &8951206169906926403
