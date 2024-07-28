@@ -155,11 +155,10 @@ public class Robot : MonoBehaviour
     {
         on = !on;
         if (!on){
-            robotPart.isSparking = true;
+            GameObject[] robotParts = {head, torso, leftArm, rightArm, leftLeg, rightLeg};
             foreach(GameObject partObject in robotParts){
                 RobotPart robotPart = partObject.GetComponent<RobotPart>();
-                robotPart.isDirty = false;
-
+                robotPart.isSparking = true;
             }
         }
     }
