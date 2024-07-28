@@ -15,7 +15,10 @@ public class Tools : MonoBehaviour
         {
             screwdriver.SetActive(true);
         }
-        
+        if (blowtorch.gameObject.activeSelf)
+        {
+            blowtorch.SetActive(false);
+        }
     }
     public void toolTwo()
     {
@@ -27,6 +30,10 @@ public class Tools : MonoBehaviour
         {
             blowtorch.SetActive(true);
         }
-        
+
+        if (screwdriver.gameObject.activeSelf)
+        {
+            screwdriver.SetActive(false);
+        }
     }
 }
