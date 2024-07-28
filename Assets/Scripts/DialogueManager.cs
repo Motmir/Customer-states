@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(DialogueInfo dialogue)
     {
         dialogueBox.SetActive(true);
         nameText.text = dialogue.name;

@@ -46,4 +46,9 @@ public class Screwdriver : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        Vector2 loc = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector2(loc.x, loc.y);
+    }
 }
