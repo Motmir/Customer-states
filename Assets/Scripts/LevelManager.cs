@@ -11,6 +11,7 @@ public class LevelControl : MonoBehaviour
     [NonSerialized] public GameObject conveyorArm;
     [NonSerialized] public GameObject conveyorClaw;
     [SerializeField] public RobotSet[] robotSets;
+    [SerializeField] public Sprite[] dirts;
     [SerializeField] GameObject robotPrefab;
     [SerializeField] LevelInfo[] levels;
     [SerializeField] public GameObject screwdriver;
@@ -67,7 +68,7 @@ public class LevelControl : MonoBehaviour
 
     public void FetchNextRobot()
     {
-        if (robots.Count == 0) { NextLevel(); }
+        if (robots.Count - 1 == 0) { NextLevel(); return; }
         float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
@@ -111,7 +112,6 @@ public class LevelControl : MonoBehaviour
 
         currentLevel++;
         LoadLevel(levels[currentLevel]);
-        FetchNextRobot();
     }
 
     // Update is called once per frame

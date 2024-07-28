@@ -18,7 +18,6 @@ public class Robot : MonoBehaviour
         Caroline,
         TVbot
     }
-    public enum Dirt {None, Bloody, Dirty, Screw , Drawing, Oil}
 
     Dictionary<RobotSetName, RobotSet> musicDatabase = new Dictionary<RobotSetName, RobotSet>();
 
@@ -32,13 +31,6 @@ public class Robot : MonoBehaviour
     [SerializeField] private GameObject leftPunch;
     [SerializeField] private GameObject rightPunch;
 
-
-    private RobotSet headSet;
-    private RobotSet torsoSet;
-    private RobotSet leftLegSet;
-    private RobotSet rightLegSet;
-    private RobotSet leftArmSet;
-    private RobotSet rightArmSet;
     public bool evil = false;
     public bool somethingWrong = false;
     public bool on = false;
@@ -47,55 +39,50 @@ public class Robot : MonoBehaviour
         evil = instance.evil;
         on = instance.on;
         somethingWrong = instance.somethingWrong;
-        if (instance.partsSet == RobotSetName.Random ){
+        UpdateRobotPart(instance.partsSet, instance.head, head);
+        UpdateRobotPart(instance.partsSet, instance.torso, torso);
+        UpdateRobotPart(instance.partsSet, instance.leftLeg, leftLeg);
+        UpdateRobotPart(instance.partsSet, instance.rightLeg, rightLeg);
+        UpdateRobotPart(instance.partsSet, instance.leftArm, leftArm);
+        UpdateRobotPart(instance.partsSet, instance.rightArm, rightArm);
+    }
+
+    void UpdateRobotPart(RobotSetName robotSet, RobotInstanceInfo.PartInfo partInstance, GameObject partObject)
+    {
+        RobotPart robotPart = partObject.GetComponent<RobotPart>();
+
+        if (robotSet == RobotSetName.Random ){
             int length = Enum.GetValues(typeof(RobotSetName)).Length;
             int set = UnityEngine.Random.Range(3, length) - 1;
-            headSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(3, length) - 1;
-            torsoSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(3, length) - 1;
-            leftLegSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(3, length) - 1;
-            rightLegSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(3, length) - 1;
-            leftArmSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(3, length) - 1;
-            rightArmSet =  manager.robotSets[set];
+            robotPart.set =  manager.robotSets[set];
         } else {
-            int set = (int)instance.partsSet - 1;
-            Debug.Log(set);
-            headSet =  manager.robotSets[set];
-            torsoSet =  manager.robotSets[set];
-            leftLegSet =  manager.robotSets[set];
-            rightLegSet =  manager.robotSets[set];
-            leftArmSet =  manager.robotSets[set];
-            rightArmSet =  manager.robotSets[set];
+            int set = (int)robotSet - 1;
+            robotPart.set =  manager.robotSets[set];
         }
-        if (head) {
-            if(on){
-                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
-            } else {
-                head.GetComponent<SpriteRenderer>().sprite = headSet.headOff;
-            }
+
+        if (partInstance.dirt != RobotPart.Dirt.None)
+        {
+            robotPart.dirtSprite = manager.dirts[(int)partInstance.dirt - 1];
+            robotPart.isDirty = true;
         }
-        if (torso) {
-            if(on){
-                torso.GetComponent<SpriteRenderer>().sprite = torsoSet.torsoOn;
-            } else {
-                torso.GetComponent<SpriteRenderer>().sprite = torsoSet.torsoOff;
-            }
+
+        if (partInstance.sparking)
+        {
+            robotPart.isSparking = true;
         }
-        if (leftArm) {
-            leftArm.GetComponent<SpriteRenderer>().sprite = leftArmSet.arm;
+
+        if (partInstance.batterd)
+        {
+            robotPart.isBroken = 6;
         }
-        if (rightArm) {
-            rightArm.GetComponent<SpriteRenderer>().sprite = rightArmSet.arm;
+
+        if (partInstance.loose)
+        {
+            robotPart.isLoose = 6;
         }
-        if (leftLeg) {
-            leftLeg.GetComponent<SpriteRenderer>().sprite = leftLegSet.leg;
-        }
-        if (rightLeg) {
-            rightLeg.GetComponent<SpriteRenderer>().sprite = rightLegSet.leg;
+
+        if (partInstance.partMissing){
+            Destroy(partObject.GetComponent<HingeJoint2D>());
         }
     }
 
@@ -104,33 +91,6 @@ public class Robot : MonoBehaviour
     void Awake()
     {
         manager = GameObject.Find("LevelManager").GetComponent<LevelControl>();
-        torso = this.gameObject.transform.Find("torso").gameObject;
-        Transform headTransform = this.gameObject.transform.Find("head");
-        if (headTransform != null)
-        {
-            head = headTransform.gameObject;
-        }
-        Transform leftLegTransform = this.gameObject.transform.Find("leftLeg");
-        if (leftLegTransform != null)
-        {
-            leftLeg = leftLegTransform.gameObject;
-        }
-        Transform rightLegTransform = this.gameObject.transform.Find("rightLeg");
-        if (rightLegTransform != null)
-        {
-            rightLeg = rightLegTransform.gameObject;
-        }
-        Transform leftArmTransform = this.gameObject.transform.Find("leftArm");
-        if (leftArmTransform != null)
-        {
-            leftArm = leftArmTransform.gameObject;
-        }
-        Transform rightArmTransform = this.gameObject.transform.Find("rightArm");
-        if (rightArmTransform != null)
-        {
-            rightArm = rightArmTransform.gameObject;
-        }
-
         torso.GetComponent<HingeJoint2D>().connectedBody = manager.conveyorClaw.GetComponent<Rigidbody2D>();
         torso.GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, -0.6f);
 
@@ -175,43 +135,38 @@ public class Robot : MonoBehaviour
     {
         torso.GetComponent<HingeJoint2D>().enabled = false;
     }
+    public void BeatTheDevilOutOfThem()
+    {
+        evil = false;
+    }
     public void Wash()
     {
-        if (head) {
-            head.GetComponent<RobotPart>().isDirty = false;
+        GameObject[] robotParts = {head, torso, leftArm, rightArm, leftLeg, rightLeg};
+        foreach(GameObject partObject in robotParts){
+            RobotPart robotPart = partObject.GetComponent<RobotPart>();
+            robotPart.isDirty = false;
+            if (on){
+                robotPart.isSparking = true;
+            }
         }
-        if (torso) {
-            torso.GetComponent<RobotPart>().isDirty = false;
-        }
-        if (leftArm) {
-            leftArm.GetComponent<RobotPart>().isDirty = false;
-        }
-        if (rightArm) {
-            rightArm.GetComponent<RobotPart>().isDirty = false;
-        }
-        if (leftLeg) {
-            leftLeg.GetComponent<RobotPart>().isDirty = false;
-        }
-        if (rightLeg) {
-            rightLeg.GetComponent<RobotPart>().isDirty = false;
-        }
+
     }
     public void TogglePower()
     {
         on = !on;
-        if (head) {
-            if(on){
-                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
-            } else {
-                head.GetComponent<SpriteRenderer>().sprite = headSet.headOff;
+        if (!on){
+            GameObject[] robotParts = {head, torso, leftArm, rightArm, leftLeg, rightLeg};
+            foreach(GameObject partObject in robotParts){
+                RobotPart robotPart = partObject.GetComponent<RobotPart>();
+                robotPart.isSparking = false;
             }
         }
-        if (torso) {
-            if(on){
-                torso.GetComponent<SpriteRenderer>().sprite = torsoSet.torsoOn;
-            } else {
-                torso.GetComponent<SpriteRenderer>().sprite = torsoSet.torsoOff;
+        if (on){
+            GameObject[] robotParts = {head, torso, leftArm, rightArm, leftLeg, rightLeg};
+            foreach(GameObject partObject in robotParts){
+                RobotPart robotPart = partObject.GetComponent<RobotPart>();
+                robotPart.somethingWrong = false;
             }
-        }
+        }    
     }
 }

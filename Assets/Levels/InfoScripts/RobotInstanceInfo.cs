@@ -8,7 +8,7 @@ public class RobotInstanceInfo : ScriptableObject
 
     [System.Serializable] public struct PartInfo {
         public bool partMissing;
-        public Robot.Dirt dirt;
+        public RobotPart.Dirt dirt;
         public bool batterd;
         public bool loose;
         public bool sparking;

@@ -4,32 +4,44 @@ using UnityEngine;
 
 public class RobotPart : MonoBehaviour
 {
+    public enum Dirt {None, Tires , Drawing, Oil, Bloody }
+
+    public enum Part {
+        Head,
+        Torso,
+        LeftArm,
+        RightArm,
+        LeftLeg,
+        RightLeg,
+    }
+    [System.NonSerialized] public RobotSet set;
+    public Part IAm;
     private Robot robot;
     public Sprite dirtSprite;
+    SpriteRenderer spriteRenderer;
     private GameObject dirt;
     private GameObject hurt;
     private GameObject screw;
-
-
-
+    private GameObject spark;
     private const float interactCooldown = 2f;
     private float remainingCooldown = 0;
-    // Start is called before the first frame update
-    public int isBroken = 6;
-    public bool isDirty = true;
-    public int isLoose = 6;
-
+    [System.NonSerialized] public int isBroken = 0;
+    [System.NonSerialized] public bool isDirty = false;
+    [System.NonSerialized] public int isLoose = 0;
+    [System.NonSerialized] public bool isSparking = false;
 
 
     void Awake(){
         robot = this.transform.parent.gameObject.GetComponent<Robot>();
         hurt = this.gameObject.transform.Find("hurt").gameObject;
         dirt = this.gameObject.transform.Find("dirt").gameObject;
+        spark = this.gameObject.transform.Find("bad spark").gameObject;
         Transform screwTransform = this.gameObject.transform.Find("screw");
         if (screwTransform != null)
         {
             screw = screwTransform.gameObject;
         }
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -41,13 +53,57 @@ public class RobotPart : MonoBehaviour
 
     void Update()
     {
-        Sprite sprite = this.GetComponent<SpriteRenderer>().sprite;
+        Sprite sprite = null;
+        switch (IAm){
+            case Part.Head:
+                if(robot.on){
+                    if (robot.evil){
+                        sprite = set.headActive;
+                    } else {
+                        sprite = set.headOn;
+                    }
+                } else {
+                    sprite = set.headOff;
+                }
+                break;
+            case Part.Torso:
+                if(robot.on){
+                    sprite = set.torsoOn;
+                } else {
+                    sprite = set.torsoOff;
+                }
+                break;
+            case Part.LeftArm:
+                sprite = set.arm;
+                break;
+            case Part.RightArm:
+                sprite = set.arm;
+                break;
+            case Part.LeftLeg:
+                sprite = set.leg;
+                break;
+            case Part.RightLeg:
+                sprite = set.leg;
+                break;
+        }
+
+
+        spriteRenderer.sprite = sprite;
+        
+        if (screw) {
+            screw.GetComponent<Screw>().SetScrew(isLoose);
+        }
+
         hurt.GetComponent<SpriteMask>().sprite = sprite;
         dirt.GetComponent<SpriteMask>().sprite = sprite;
         hurt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isBroken/6);
         dirt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isDirty ? 1.0f : 0.0f);
-        if (screw) {
-            screw.GetComponent<Screw>().SetScrew(isLoose);
+        dirt.GetComponent<SpriteRenderer>().sprite = dirtSprite;
+
+        if (isSparking){
+            spark.SetActive(true);
+        } else {
+            spark.SetActive(false);
         }
     }
 

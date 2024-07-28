@@ -60,6 +60,7 @@ public class InfoButtons : MonoBehaviour
     public void startButton()
     {
         SceneManager.LoadScene(1);
+        GameObject.Find("BackgroundMusic").GetComponent<AudioSource>().Stop();
     }
     
     void Update()
