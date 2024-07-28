@@ -15,7 +15,8 @@ public class Robot : MonoBehaviour
         Orbot,
         Tanner
     }
-    public enum Condititions { Battered, HasKnife, HasGlases, Bloody, Dirty, Screw , Drawing, Oil, Random}
+    public enum Dirt {None, Bloody, Dirty, Screw , Drawing, Oil}
+
     Dictionary<RobotSetName, RobotSet> musicDatabase = new Dictionary<RobotSetName, RobotSet>();
 
     [SerializeField] private LevelControl manager;
@@ -57,7 +58,7 @@ public class Robot : MonoBehaviour
             leftArmSet =  manager.robotSets[set];
             set = UnityEngine.Random.Range(2, length) - 1;
             rightArmSet =  manager.robotSets[set];
-        } else if (instance.partsSet != RobotSetName.Roomba) {
+        } else {
             int set = (int)instance.partsSet - 1;
             headSet =  manager.robotSets[set];
             torsoSet =  manager.robotSets[set];

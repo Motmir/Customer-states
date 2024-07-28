@@ -5,18 +5,27 @@ using UnityEngine;
 [CreateAssetMenu]
 public class RobotInstanceInfo : ScriptableObject
 {
+
+    [System.Serializable] public struct PartInfo {
+        public bool partMissing;
+        public Robot.Dirt dirt;
+        public bool batterd;
+        public bool loose;
+        public bool sparking;
+    }
+
     public Robot.RobotSetName partsSet;
     public bool evil;
     public bool on;
     public bool somethingWrong;
 
     //Contidtions affecting part
-    public Robot.Condititions[] head;
-    public Robot.Condititions[] torso;
-    public Robot.Condititions[] leftArm;
-    public Robot.Condititions[] rightArm;
-    public Robot.Condititions[] leftLeg;
-    public Robot.Condititions[] rightLeg;
+    public PartInfo head;
+    public PartInfo torso;
+    public PartInfo leftArm;
+    public PartInfo rightArm;
+    public PartInfo leftLeg;
+    public PartInfo rightLeg;
 
     public DialogueInfo dialogue;
     public CustomerNoteInfo customerNote;
