@@ -8,7 +8,7 @@ public class Robot : MonoBehaviour
     public enum RobotSetName { 
         Random, 
         Roomba,
-        SecretaryGlasses
+        SecretaryGlasses,
         Caroline,
         Handsome,
         Maid,
