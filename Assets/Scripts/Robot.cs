@@ -81,6 +81,10 @@ public class Robot : MonoBehaviour
         {
             robotPart.isLoose = 6;
         }
+
+        if (partInstance.partMissing){
+            Destroy(partObject.GetComponent<HingeJoint2D>());
+        }
     }
 
 
@@ -134,24 +138,15 @@ public class Robot : MonoBehaviour
     }
     public void Wash()
     {
-        if (head) {
-            head.GetComponent<RobotPart>().isDirty = false;
+        GameObject[] robotParts = {head, torso, leftArm, rightArm, leftLeg, rightLeg};
+        foreach(GameObject partObject in robotParts){
+            RobotPart robotPart = partObject.GetComponent<RobotPart>();
+            robotPart.isDirty = false;
+            if (on){
+                robotPart.isSparking = true;
+            }
         }
-        if (torso) {
-            torso.GetComponent<RobotPart>().isDirty = false;
-        }
-        if (leftArm) {
-            leftArm.GetComponent<RobotPart>().isDirty = false;
-        }
-        if (rightArm) {
-            rightArm.GetComponent<RobotPart>().isDirty = false;
-        }
-        if (leftLeg) {
-            leftLeg.GetComponent<RobotPart>().isDirty = false;
-        }
-        if (rightLeg) {
-            rightLeg.GetComponent<RobotPart>().isDirty = false;
-        }
+
     }
     public void TogglePower()
     {

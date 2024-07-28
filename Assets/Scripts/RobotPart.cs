@@ -22,6 +22,7 @@ public class RobotPart : MonoBehaviour
     private GameObject dirt;
     private GameObject hurt;
     private GameObject screw;
+    private GameObject spark;
     private const float interactCooldown = 2f;
     private float remainingCooldown = 0;
     [System.NonSerialized] public int isBroken = 0;
@@ -34,6 +35,7 @@ public class RobotPart : MonoBehaviour
         robot = this.transform.parent.gameObject.GetComponent<Robot>();
         hurt = this.gameObject.transform.Find("hurt").gameObject;
         dirt = this.gameObject.transform.Find("dirt").gameObject;
+        spark = this.gameObject.transform.Find("bad spark").gameObject;
         Transform screwTransform = this.gameObject.transform.Find("screw");
         if (screwTransform != null)
         {
@@ -91,6 +93,12 @@ public class RobotPart : MonoBehaviour
         dirt.GetComponent<SpriteMask>().sprite = sprite;
         hurt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isBroken/6);
         dirt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isDirty ? 1.0f : 0.0f);
+
+        if (isSparking){
+            spark.SetActive(true);
+        } else {
+            spark.SetActive(false);
+        }
     }
 
     public void Screwdriver(){
