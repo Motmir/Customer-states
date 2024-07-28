@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8d46d2dda5bab4386f2fe697bae8a9, type: 3}
   m_Name: TVbot
   m_EditorClassIdentifier: 
-  torsoOff: {fileID: 0}
-  torsoOn: {fileID: 0}
-  headOff: {fileID: 0}
-  headOn: {fileID: 0}
-  headActive: {fileID: 0}
-  arm: {fileID: 0}
-  leg: {fileID: 0}
+  torsoOff: {fileID: 21300000, guid: 3fe1db9f937c2514597082f68f9049c3, type: 3}
+  torsoOn: {fileID: 21300000, guid: 7fa20c48952d94e4b92d8afc08d95408, type: 3}
+  headOff: {fileID: 21300000, guid: 18fb7155daf8add439dcc134dcc99e6e, type: 3}
+  headOn: {fileID: 21300000, guid: 34c90d2115e2dc24dba5040e94447201, type: 3}
+  headActive: {fileID: 21300000, guid: 3dd21177d3cf21d40af405c49d785890, type: 3}
+  arm: {fileID: 21300000, guid: e0552e38d8beb6545a7d659246acda06, type: 3}
+  leg: {fileID: 21300000, guid: e0552e38d8beb6545a7d659246acda06, type: 3}
