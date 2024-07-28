@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
   m_Name: New Robot Instance Info
   m_EditorClassIdentifier: 
-  partsSet: Random
+  partsSet: 0
   evil: 0
   on: 0
+  somethingWrong: 0
   head: 
   torso: 02000000
   leftArm: 02000000
   rightArm: 02000000
   leftLeg: 
   rightLeg: 
+  dialogue: {fileID: 0}

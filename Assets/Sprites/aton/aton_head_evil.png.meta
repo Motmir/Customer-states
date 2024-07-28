@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/aton/aton_head_evil.png.meta
 guid: 97b50119bb4cd1d4b80b67d3f9c318b8
+========
+guid: bc11f8f72d1d8ba4ca3b82961987cbad
+>>>>>>>> b3f516929820f2876da6f787d37a8c023526e0e4:Assets/Sprites/IMG_0361.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

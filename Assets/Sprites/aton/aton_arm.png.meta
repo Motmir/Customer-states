@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/aton/aton_arm.png.meta
 guid: 208f3610a8827ac4caef905e1115779e
+========
+guid: d980a5f1340b7c14f9bd6824b2604fa5
+>>>>>>>> b3f516929820f2876da6f787d37a8c023526e0e4:Assets/Sprites/IMG_0360.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
