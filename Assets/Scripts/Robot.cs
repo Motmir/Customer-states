@@ -70,7 +70,7 @@ public class Robot : MonoBehaviour
             if(on){
                 head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
             } else {
-                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
+                head.GetComponent<SpriteRenderer>().sprite = headSet.headOff;
             }
         }
         if (torso) {
@@ -198,7 +198,7 @@ public class Robot : MonoBehaviour
             if(on){
                 head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
             } else {
-                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
+                head.GetComponent<SpriteRenderer>().sprite = headSet.headOff;
             }
         }
         if (torso) {
