@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180ceeb75fd4cee48b79193a218a69a3, type: 3}
+  m_Script: {fileID: 11500000, guid: bb501f82bf4377b428023308b093d092, type: 3}
   m_Name: William3Dialogue1
   m_EditorClassIdentifier: 
-  name: Sir William III
+  robotName: 
+  dialogueStarted: 0
   sentences:
   - Hello sir, how are you doing on this lovely evening. I am Sir William III. Identify
     yourself inspector.

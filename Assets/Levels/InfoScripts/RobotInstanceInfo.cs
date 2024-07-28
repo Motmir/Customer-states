@@ -19,4 +19,5 @@ public class RobotInstanceInfo : ScriptableObject
     public Robot.Condititions[] rightLeg;
 
     public DialogueInfo dialogue;
+    public CustomerNoteInfo customerNote;
 }

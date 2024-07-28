@@ -14,6 +14,9 @@ public class LevelControl : MonoBehaviour
     [SerializeField] public RobotSet[] robotSets;
     [SerializeField] GameObject robotPrefab;
     [SerializeField] LevelInfo[] levels;
+    [SerializeField] public GameObject screwdriver;
+    [SerializeField] public GameObject blowtorch;
+
     public GameObject robot;
     public Robot roboScript;
     [NonSerialized] public bool done;
@@ -21,6 +24,7 @@ public class LevelControl : MonoBehaviour
     public int scene;
     private GameObject crane;
     private Queue<RobotInstanceInfo> robots;
+    RobotInstanceInfo currRobot;
 
 
     // Start is called before the first frame update
@@ -39,7 +43,12 @@ public class LevelControl : MonoBehaviour
         float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
-        robot.GetComponent<Robot>().Init(robots.Dequeue());
+        currRobot = robots.Dequeue();
+        robot.GetComponent<Robot>().Init(currRobot);
+        if (currRobot.dialogue != null)
+        {
+            currRobot.dialogue.dialogueStarted = false;
+        }
         DisableRobotCollision();
         Invoke("EnableRobotCollision", 2f);
     }
@@ -52,9 +61,6 @@ public class LevelControl : MonoBehaviour
         {
             robots.Enqueue(bot);
         }
-
-        Debug.Log(robots);
-
         FetchNextRobot();
     }
 
@@ -72,9 +78,21 @@ public class LevelControl : MonoBehaviour
         {
             userInterface.SetActive(false);
             conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.right * 5;
+            screwdriver.SetActive(false);
+            blowtorch.SetActive(false);
         }
         else if (conveyorArm.transform.position.x >= 0)
         {
+            if (done != true)
+            {
+                if (currRobot.dialogue != null && robot.GetComponent<Robot>().on) { 
+                    if (!currRobot.dialogue.dialogueStarted)
+                    {
+                        currRobot.dialogue.dialogueStarted = true;
+                        FindObjectOfType<DialogueManager>().StartDialogue(currRobot.dialogue);
+                    }
+                }
+            }
             userInterface.SetActive(true);
             conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             if (conveyorArm.transform.position.x >= 15)
