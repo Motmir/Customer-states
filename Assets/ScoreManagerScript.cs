@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Xml.Schema;
 using TMPro;
 using Unity.VisualScripting;
+using Unity.XR.GoogleVr;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class ScoreManagerScript : MonoBehaviour
 {
@@ -22,8 +25,8 @@ public class ScoreManagerScript : MonoBehaviour
     private Robot robot;
     private RobotPart[] parts;
 
-    private GameObject endOfLevelCanvas;
-    private TextMeshPro scoreText;
+    [SerializeField] private GameObject endOfLevelCanvasObject;
+    [SerializeField] private GameObject scoreTextObject;
 
     public void getStuff()
     {
@@ -80,11 +83,20 @@ public class ScoreManagerScript : MonoBehaviour
 
     public void DisplayScore()
     {
-        endOfLevelCanvas = GameObject.Find("EndOfLevelCanvas").gameObject;
-        scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshPro>();
+        //endOfLevelCanvas = GameObject.Find("EndOfLevelCanvas").gameObject;
+        //scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshPro>();
+        int day = 1;
+        string title = string.Format("Score of Day {0} \n", day);
+        string dirty = string.Format("{0}x dirty bodyparts -{1} \n", dirtyPartsCount, dirtyPartsCount*POINT);
+        string missing = string.Format("{0}x missing bodyparts = -{1} \n", missingPartsCount, missingPartsCount * POINT);
+        string broken = string.Format("{0}x broken bodyparts = -{1} \n", brokenPartsCount, brokenPartsCount * POINT);
+        string loose = string.Format("{0}x loose bodyparts = -{1} \n", loosePartsCount, loosePartsCount * POINT);
+        string somethingWrong = string.Format("{0}x something wrong = -{1} \n", somethingWrongCount, somethingWrongCount * POINT);
+        string evil = string.Format("{0}x evil = -{1} \n", evilCount, evilCount * POINT);
 
-        scoreText.text = "Helllllllooooooo";
-        endOfLevelCanvas.SetActive(true);
+        scoreTextObject.GetComponent<TextMeshProUGUI>().text = title + dirty+ missing + broken + loose + somethingWrong + evil;
+        endOfLevelCanvasObject.SetActive(true);
+
     }
 
 

@@ -50,9 +50,13 @@ public class LevelControl : MonoBehaviour
     };
 
 
+    private ScoreManagerScript scoreManagerScript;
+
+
     // Start is called before the first frame update
     public void Start()
     {
+        Debug.Log("Helllo");
         robots = new Queue<RobotInstanceInfo>();
         conveyorArm = GameObject.Find("arm_base");
         conveyorClaw = GameObject.Find("conveyor_claw");
@@ -87,7 +91,7 @@ public class LevelControl : MonoBehaviour
         }
         DisableRobotCollision();
         Invoke("EnableRobotCollision", 1f);
-        GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>().getStuff();
+        scoreManagerScript.getStuff();
     }
 
     void LoadLevel(LevelInfo level)
@@ -103,6 +107,8 @@ public class LevelControl : MonoBehaviour
 
     void NextLevel()
     {
+        scoreManagerScript.DisplayScore();
+
         currentLevel++;
         LoadLevel(levels[currentLevel]);
         FetchNextRobot();
@@ -141,7 +147,7 @@ public class LevelControl : MonoBehaviour
             conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             if (conveyorArm.transform.position.x >= 15)
             {
-                GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>().calculateRobotScore();
+                scoreManagerScript.calculateRobotScore();
                 Destroy(robot);
                 crane.SetActive(false);
                 conveyorArm.transform.position = new Vector3(-25, 3.88f, -0.1f);
@@ -197,6 +203,7 @@ public class LevelControl : MonoBehaviour
 
     private void Awake()
     {
+        scoreManagerScript = GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>();
         scene = SceneManager.GetActiveScene().buildIndex;
 
         if (scene == 1)
