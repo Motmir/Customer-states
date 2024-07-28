@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,6 +27,27 @@ public class LevelControl : MonoBehaviour
     private Queue<RobotInstanceInfo> robots;
     RobotInstanceInfo currRobot;
 
+    private string[] firstNames =
+    {
+        "John",
+        "William",
+        "Auburn",
+        "Liz",
+        "Nessie",
+        "Zenith",
+        "Mark"
+    };
+    private string[] lastNames =
+    {
+        "Smith",
+        "Woodcoffin",
+        "Ghost",
+        "Ullbir",
+        "Lock",
+        "Silverpheonix",
+        "Cowster"
+    };
+
 
     // Start is called before the first frame update
     public void Start()
@@ -47,7 +66,17 @@ public class LevelControl : MonoBehaviour
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
         currRobot = robots.Dequeue();
-        ownerName.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.ownerName;
+        if (currRobot.customerNote.ownerName != "")
+        {
+            ownerName.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.ownerName;
+        }
+        else
+        {
+            int randOne = UnityEngine.Random.Range(0, firstNames.Length - 1);
+            int randTwo = UnityEngine.Random.Range(0, firstNames.Length - 1);
+            ownerName.GetComponent<TextMeshProUGUI>().text = firstNames[randOne] + " " + lastNames[randTwo];
+        }
+        FindObjectOfType<DialogueManager>().EndDialogue();
         note.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.customerNote;
         robot.GetComponent<Robot>().Init(currRobot);
         if (currRobot.dialogue != null)
@@ -55,7 +84,7 @@ public class LevelControl : MonoBehaviour
             currRobot.dialogue.dialogueStarted = false;
         }
         DisableRobotCollision();
-        Invoke("EnableRobotCollision", 2f);
+        Invoke("EnableRobotCollision", 1f);
     }
 
     void LoadLevel(LevelInfo level)
@@ -117,7 +146,10 @@ public class LevelControl : MonoBehaviour
         //Disable torso
         robot.GetComponentInChildren<BoxCollider2D>().enabled = false;
         //Disable the rest
-        robot.GetComponentInChildren<CapsuleCollider2D>().enabled = false;
+        foreach (var comp in robot.GetComponentsInChildren<CapsuleCollider2D>())
+        {
+            comp.enabled = false;
+        }
     }
 
     public void EnableRobotCollision()
@@ -125,7 +157,14 @@ public class LevelControl : MonoBehaviour
         //Enable torso
         robot.GetComponentInChildren<BoxCollider2D>().enabled = true;
         //Enable the rest
-        robot.GetComponentInChildren<CapsuleCollider2D>().enabled = true;
+        foreach (var comp in robot.GetComponentsInChildren<CapsuleCollider2D>())
+        {
+            comp.enabled = true;
+        }
+        foreach (var hinge in robot.GetComponentsInChildren<HingeJoint2D>())
+        {
+            hinge.useLimits = false;
+        }
     }
 
     public void setDone()
