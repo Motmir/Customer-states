@@ -56,6 +56,7 @@ public class LevelControl : MonoBehaviour
         }
         DisableRobotCollision();
         Invoke("EnableRobotCollision", 2f);
+        GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>().getStuff();
     }
 
     void LoadLevel(LevelInfo level)
@@ -102,6 +103,7 @@ public class LevelControl : MonoBehaviour
             conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             if (conveyorArm.transform.position.x >= 15)
             {
+                GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>().calculateRobotScore();
                 Destroy(robot);
                 crane.SetActive(false);
                 conveyorArm.transform.position = new Vector3(-25, 3.88f, -0.1f);
