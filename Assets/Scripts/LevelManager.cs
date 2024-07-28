@@ -18,6 +18,7 @@ public class LevelControl : MonoBehaviour
     [SerializeField] public GameObject screwdriver;
     [SerializeField] public GameObject blowtorch;
     [SerializeField] public GameObject note;
+    [SerializeField] public GameObject ownerName;
 
     public GameObject robot;
     public Robot roboScript;
@@ -46,6 +47,7 @@ public class LevelControl : MonoBehaviour
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
         currRobot = robots.Dequeue();
+        ownerName.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.ownerName;
         note.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.customerNote;
         robot.GetComponent<Robot>().Init(currRobot);
         if (currRobot.dialogue != null)
