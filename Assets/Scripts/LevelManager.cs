@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class LevelControl : MonoBehaviour
     [SerializeField] LevelInfo[] levels;
     [SerializeField] public GameObject screwdriver;
     [SerializeField] public GameObject blowtorch;
+    [SerializeField] public GameObject note;
 
     public GameObject robot;
     public Robot roboScript;
@@ -44,6 +46,7 @@ public class LevelControl : MonoBehaviour
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
         currRobot = robots.Dequeue();
+        note.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.customerNote;
         robot.GetComponent<Robot>().Init(currRobot);
         if (currRobot.dialogue != null)
         {
