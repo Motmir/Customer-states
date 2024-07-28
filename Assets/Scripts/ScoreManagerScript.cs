@@ -28,6 +28,7 @@ public class ScoreManagerScript : MonoBehaviour
     [SerializeField] private GameObject endOfLevelCanvasObject;
     [SerializeField] private GameObject scoreTextObject;
 
+
     public void getStuff()
     {
         robot = GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>();
@@ -83,6 +84,7 @@ public class ScoreManagerScript : MonoBehaviour
 
     public void DisplayScore()
     {
+        Time.timeScale = 0;
         //endOfLevelCanvas = GameObject.Find("EndOfLevelCanvas").gameObject;
         //scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshPro>();
         int day = 1;
@@ -93,10 +95,19 @@ public class ScoreManagerScript : MonoBehaviour
         string loose = string.Format("{0}x loose bodyparts = -{1} \n", loosePartsCount, loosePartsCount * POINT);
         string somethingWrong = string.Format("{0}x something wrong = -{1} \n", somethingWrongCount, somethingWrongCount * POINT);
         string evil = string.Format("{0}x evil = -{1} \n", evilCount, evilCount * POINT);
+        int tot = POINT * (dirtyPartsCount + missingPartsCount + brokenPartsCount + loosePartsCount + somethingWrongCount + evilCount);
+        string sum = string.Format("Total points: {0}", tot);
 
         scoreTextObject.GetComponent<TextMeshProUGUI>().text = title + dirty+ missing + broken + loose + somethingWrong + evil;
         endOfLevelCanvasObject.SetActive(true);
 
+    }
+
+    public void RemoveScoreBoard()
+    {
+        Time.timeScale = 1;
+        GameObject.Find("LevelManager").GetComponent<LevelControl>().NextLevel();
+        endOfLevelCanvasObject.SetActive(false);
     }
 
 

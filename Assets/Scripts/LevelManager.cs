@@ -19,6 +19,7 @@ public class LevelControl : MonoBehaviour
     [SerializeField] public GameObject note;
     [SerializeField] public GameObject ownerName;
 
+
     public GameObject robot;
     public Robot roboScript;
     [NonSerialized] public bool done;
@@ -68,7 +69,10 @@ public class LevelControl : MonoBehaviour
 
     public void FetchNextRobot()
     {
-        if (robots.Count - 1 == 0) { NextLevel(); return; }
+        if (robots.Count == 0) {
+            GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>().DisplayScore();
+            return; 
+        }
         float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
@@ -106,7 +110,7 @@ public class LevelControl : MonoBehaviour
         FetchNextRobot();
     }
 
-    void NextLevel()
+    public void NextLevel()
     {
         scoreManagerScript.DisplayScore();
 
