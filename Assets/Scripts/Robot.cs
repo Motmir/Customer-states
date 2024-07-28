@@ -39,26 +39,32 @@ public class Robot : MonoBehaviour
     private bool somethingWrong = false;
     private bool on = false;
 
-    void Init(RobotInstanceInfo instance){
+    public void Init(RobotInstanceInfo instance){
         evil = instance.evil;
         on = instance.on;
         somethingWrong = instance.somethingWrong;
         if (instance.partsSet == RobotSetName.Random ){
             int length = Enum.GetValues(typeof(RobotSetName)).Length;
-            int set = UnityEngine.Random.Range(2, length);
+            int set = UnityEngine.Random.Range(2, length) - 1;
+            headSet =  manager.robotSets[set];
+            set = UnityEngine.Random.Range(2, length) - 1;
+            torsoSet =  manager.robotSets[set];
+            set = UnityEngine.Random.Range(2, length) - 1;
+            leftLegSet =  manager.robotSets[set];
+            set = UnityEngine.Random.Range(2, length) - 1;
+            rightLegSet =  manager.robotSets[set];
+            set = UnityEngine.Random.Range(2, length) - 1;
+            leftArmSet =  manager.robotSets[set];
+            set = UnityEngine.Random.Range(2, length) - 1;
+            rightArmSet =  manager.robotSets[set];
+        } else if (instance.partsSet != RobotSetName.Roomba) {
+            int set = (int)instance.partsSet - 1;
             headSet =  manager.robotSets[set];
             torsoSet =  manager.robotSets[set];
             leftLegSet =  manager.robotSets[set];
             rightLegSet =  manager.robotSets[set];
             leftArmSet =  manager.robotSets[set];
             rightArmSet =  manager.robotSets[set];
-        } else if (instance.partsSet != RobotSetName.Roomba) {
-            headSet =  manager.robotSets[(int)instance.partsSet];
-            torsoSet =  manager.robotSets[(int)instance.partsSet];
-            leftLegSet =  manager.robotSets[(int)instance.partsSet];
-            rightLegSet =  manager.robotSets[(int)instance.partsSet];
-            leftArmSet =  manager.robotSets[(int)instance.partsSet];
-            rightArmSet =  manager.robotSets[(int)instance.partsSet];
         }
         if (head) {
             if(on){
@@ -81,10 +87,10 @@ public class Robot : MonoBehaviour
             rightArm.GetComponent<SpriteRenderer>().sprite = rightArmSet.arm;
         }
         if (leftLeg) {
-            leftLeg.GetComponent<SpriteRenderer>().sprite = leftLegSet.arm;
+            leftLeg.GetComponent<SpriteRenderer>().sprite = leftLegSet.leg;
         }
         if (rightLeg) {
-            rightLeg.GetComponent<SpriteRenderer>().sprite = rightLegSet.arm;
+            rightLeg.GetComponent<SpriteRenderer>().sprite = rightLegSet.leg;
         }
     }
 

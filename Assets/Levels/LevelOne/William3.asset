@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
-  m_Name: New Robot Instance Info
+  m_Name: William3
   m_EditorClassIdentifier: 
-  partsSet: 
+  partsSet: 3
   evil: 0
-  on: 0
-  head: 
+  on: 1
+  somethingWrong: 0
+  head: 00000000
   torso: 
   leftArm: 
   rightArm: 
   leftLeg: 
   rightLeg: 
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: fd87f9070c7058a489b52be9692cb564, type: 2}

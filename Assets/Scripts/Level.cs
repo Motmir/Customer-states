@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class LevelInfo : ScriptableObject
+[System.Serializable]
+public class Level
 {
     public RobotInstanceInfo[] levelList;
 }

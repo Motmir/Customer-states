@@ -13,24 +13,25 @@ public class LevelControl : MonoBehaviour
     [NonSerialized] public GameObject conveyorClaw;
     [SerializeField] public RobotSet[] robotSets;
     [SerializeField] GameObject robotPrefab;
+    [SerializeField] LevelInfo[] levels;
     public GameObject robot;
     public Robot roboScript;
     [NonSerialized] public bool done;
     [SerializeField] private GameObject userInterface;
     public int scene;
     private GameObject crane;
+    private Queue<RobotInstanceInfo> robots;
+
 
     // Start is called before the first frame update
     public void Start()
     {
+        robots = new Queue<RobotInstanceInfo>();
         conveyorArm = GameObject.Find("arm_base");
         conveyorClaw = GameObject.Find("conveyor_claw");
         done = false;
-        float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
-        float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
-        robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
-        roboScript = robot.GetComponent<Robot>();
         crane = GameObject.Find("Crane");
+        LoadLevel(levels[0]);
     }
 
     public void FetchNextRobot()
@@ -38,8 +39,23 @@ public class LevelControl : MonoBehaviour
         float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
+        robot.GetComponent<Robot>().Init(robots.Dequeue());
         DisableRobotCollision();
         Invoke("EnableRobotCollision", 2f);
+    }
+
+    void LoadLevel(LevelInfo level)
+    {
+        robots.Clear();
+
+        foreach (RobotInstanceInfo bot in level.levelList)
+        {
+            robots.Enqueue(bot);
+        }
+
+        Debug.Log(robots);
+
+        FetchNextRobot();
     }
 
     // Update is called once per frame
@@ -55,7 +71,7 @@ public class LevelControl : MonoBehaviour
             (done == true && conveyorArm.transform.position.x <= 15))
         {
             userInterface.SetActive(false);
-            conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.right * 2;
+            conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.right * 5;
         }
         else if (conveyorArm.transform.position.x >= 0)
         {
