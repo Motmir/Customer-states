@@ -162,11 +162,7 @@ public class Robot : MonoBehaviour
             }
         }
         if (on){
-            GameObject[] robotParts = {head, torso, leftArm, rightArm, leftLeg, rightLeg};
-            foreach(GameObject partObject in robotParts){
-                RobotPart robotPart = partObject.GetComponent<RobotPart>();
-                robotPart.somethingWrong = false;
-            }
+            somethingWrong = false;
         }    
     }
 }
