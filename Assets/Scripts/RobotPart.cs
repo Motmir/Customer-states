@@ -8,9 +8,11 @@ public class RobotPart : MonoBehaviour
     public Sprite dirtSprite;
     private GameObject dirt;
     private GameObject hurt;
+    private GameObject screw;
 
 
-    private const float interactCooldown = 0.5f;
+
+    private const float interactCooldown = 2f;
     private float remainingCooldown = 0;
     // Start is called before the first frame update
     private int isBroken = 6;
@@ -23,6 +25,7 @@ public class RobotPart : MonoBehaviour
         robot = this.transform.parent.gameObject.GetComponent<Robot>();
         hurt = this.gameObject.transform.Find("hurt").gameObject;
         dirt = this.gameObject.transform.Find("dirt").gameObject;
+        screw = this.gameObject.transform.Find("screw").gameObject;
     }
 
     void FixedUpdate()
@@ -39,6 +42,9 @@ public class RobotPart : MonoBehaviour
         dirt.GetComponent<SpriteMask>().sprite = sprite;
         hurt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isBroken/6);
         dirt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isDirty ? 1.0f : 0.0f);
+        if (screw) {
+            screw.GetComponent<Screw>().SetScrew(isLoose);
+        }
     }
 
     public void Screwdriver(){
