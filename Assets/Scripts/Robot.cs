@@ -15,7 +15,7 @@ public class Robot : MonoBehaviour
     [SerializeField] private GameObject leftPunch;
     [SerializeField] private GameObject rightPunch;
 
-    public enum Condititions { Battered, Bloody, Dirty, Screw }
+    public enum Condititions { Battered, Bloody, Dirty, Screw , Drawing, Oil}
     public struct RobotInstance
     {
         public string partsSet;
