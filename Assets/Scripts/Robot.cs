@@ -158,8 +158,15 @@ public class Robot : MonoBehaviour
             GameObject[] robotParts = {head, torso, leftArm, rightArm, leftLeg, rightLeg};
             foreach(GameObject partObject in robotParts){
                 RobotPart robotPart = partObject.GetComponent<RobotPart>();
-                robotPart.isSparking = true;
+                robotPart.isSparking = false;
             }
         }
+        if (on){
+            GameObject[] robotParts = {head, torso, leftArm, rightArm, leftLeg, rightLeg};
+            foreach(GameObject partObject in robotParts){
+                RobotPart robotPart = partObject.GetComponent<RobotPart>();
+                robotPart.somethingWrong = false;
+            }
+        }    
     }
 }

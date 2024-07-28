@@ -13293,10 +13293,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ca53ee1857d39645879a1da3a476cba, type: 2}
   - {fileID: 11400000, guid: 8ebec534b8457834ebdd05fbba152968, type: 2}
   dirts:
-  - {fileID: 21300000, guid: f1a636c15d4e29846a7c5f307694fdf4, type: 3}
   - {fileID: 21300000, guid: 20c2e69ba9c8cf14bbca8a1d85567c37, type: 3}
   - {fileID: 21300000, guid: 2e3db20e711a6b24495ecbf758a2b38d, type: 3}
   - {fileID: 21300000, guid: bf660fce2abe5ee4299d48850913e41f, type: 3}
+  - {fileID: 21300000, guid: f1a636c15d4e29846a7c5f307694fdf4, type: 3}
   robotPrefab: {fileID: 3368389557351800027, guid: 74595164697863c4d97505142c34d297, type: 3}
   levels:
   - {fileID: 11400000, guid: 9d54224e878aad54ba13cd5a09ec844d, type: 2}
