@@ -135,6 +135,10 @@ public class Robot : MonoBehaviour
     {
         torso.GetComponent<HingeJoint2D>().enabled = false;
     }
+    public void BeatTheDevilOutOfThem()
+    {
+        evil = false;
+    }
     public void Wash()
     {
         GameObject[] robotParts = {head, torso, leftArm, rightArm, leftLeg, rightLeg};
@@ -150,5 +154,13 @@ public class Robot : MonoBehaviour
     public void TogglePower()
     {
         on = !on;
+        if (!on){
+            robotPart.isSparking = true;
+            foreach(GameObject partObject in robotParts){
+                RobotPart robotPart = partObject.GetComponent<RobotPart>();
+                robotPart.isDirty = false;
+
+            }
+        }
     }
 }

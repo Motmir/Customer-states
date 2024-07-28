@@ -57,7 +57,11 @@ public class RobotPart : MonoBehaviour
         switch (IAm){
             case Part.Head:
                 if(robot.on){
-                    sprite = set.headOn;
+                    if (robot.evil){
+                        sprite = set.headActive;
+                    } else {
+                        sprite = set.headOn;
+                    }
                 } else {
                     sprite = set.headOff;
                 }
