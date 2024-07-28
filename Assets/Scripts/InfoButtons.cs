@@ -15,6 +15,7 @@ public class InfoButtons : MonoBehaviour
     [SerializeField] private GameObject back;
     [SerializeField] private GameObject next;
     [SerializeField] private GameObject start;
+    [SerializeField] private GameObject pauseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,8 @@ public class InfoButtons : MonoBehaviour
         start.SetActive(false);
 
         back.SetActive(false);
+
+        pauseMenu.SetActive(false);
     }
 
     public void nextButton()
@@ -83,8 +86,14 @@ public class InfoButtons : MonoBehaviour
             next.SetActive(true);
         }
 
-        
 
 
     }
+
+    public void pauseButton()
+    {
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+    }
+
 }
