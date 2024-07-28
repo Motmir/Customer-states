@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -20,6 +21,9 @@ public class ScoreManagerScript : MonoBehaviour
     private GameObject robotObject;
     private Robot robot;
     private RobotPart[] parts;
+
+    private GameObject endOfLevelCanvas;
+    private TextMeshPro scoreText;
 
     public void getStuff()
     {
@@ -71,6 +75,16 @@ public class ScoreManagerScript : MonoBehaviour
         }
 
         Debug.Log(score);
+    }
+
+
+    public void DisplayScore()
+    {
+        endOfLevelCanvas = GameObject.Find("EndOfLevelCanvas").gameObject;
+        scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshPro>();
+
+        scoreText.text = "Helllllllooooooo";
+        endOfLevelCanvas.SetActive(true);
     }
 
 
