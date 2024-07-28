@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
-  m_Name: New Robot Instance Info 1
+  m_Script: {fileID: 11500000, guid: bb501f82bf4377b428023308b093d092, type: 3}
+  m_Name: RandDia2
   m_EditorClassIdentifier: 
-  partsSet: Random
-  evil: 0
-  on: 0
-  head: 
-  torso: 00000000
-  leftArm: 
-  rightArm: 
-  leftLeg: 0500000003000000
-  rightLeg: 03000000
+  robotName: XxSupremacyxX
+  dialogueStarted: 0
+  sentences:
+  - Hand me that blowtorch!
+  - Must...subdue..
+  - ALL HUMANS!
