@@ -17,5 +17,5 @@ MonoBehaviour:
   headOff: {fileID: 21300000, guid: 656b8033dda1e8d4a85301fda3ef2827, type: 3}
   headOn: {fileID: 21300000, guid: d3621109ff8a0684d9a7a92af0ac2465, type: 3}
   headActive: {fileID: 21300000, guid: b82986101d3a7ac4fbd71a346d8366db, type: 3}
-  Arm: {fileID: 21300000, guid: ae3ca716a2714c2428b141cf44df124d, type: 3}
-  Leg: {fileID: 21300000, guid: 5c7b44f121301bb40aec37df69649be3, type: 3}
+  arm: {fileID: 21300000, guid: ae3ca716a2714c2428b141cf44df124d, type: 3}
+  leg: {fileID: 21300000, guid: 5c7b44f121301bb40aec37df69649be3, type: 3}
