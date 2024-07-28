@@ -12,7 +12,7 @@ public class Menu_interactions : MonoBehaviour
     {
         Debug.Log("Load5");
         SceneManager.LoadScene(5);
-        GameObject.Find("BackgroundMusic").GetComponent<AudioSource>().Stop();
+        
     }
 
     public void optionButton()

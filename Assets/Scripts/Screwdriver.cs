@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 public class Screwdriver : MonoBehaviour
 {
     public Vector2 screenPosition;
     private Rigidbody2D rb;
+    [SerializeField] public AudioSource sfx;
+    
 
    private void Start()
     {
@@ -30,6 +33,11 @@ public class Screwdriver : MonoBehaviour
         {
             transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        sfx.Play();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

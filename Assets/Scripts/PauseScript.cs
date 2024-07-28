@@ -35,7 +35,7 @@ public class PauseScript : MonoBehaviour
 
     public void menuButton()
     {
-        SceneManager.LoadScene(0);
+        Application.Quit();
     }
 
     public void settingsButton()
