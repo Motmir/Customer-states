@@ -426,7 +426,6 @@ MonoBehaviour:
   back: {fileID: 2038776887}
   next: {fileID: 201308440}
   start: {fileID: 1608597762}
-  pauseMenu: {fileID: 0}
 --- !u!4 &547326164
 Transform:
   m_ObjectHideFlags: 0
