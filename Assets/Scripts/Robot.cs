@@ -8,14 +8,17 @@ public class Robot : MonoBehaviour
     public enum RobotSetName { 
         Random, 
         Roomba,
+        SecretaryGlasses,
         Caroline,
         Handsome,
         Maid,
-        BlaBot,
         Orbot,
-        Tanner
+        Tanner,
+        Scrappy,
+        TVbot
     }
-    public enum Condititions { Battered, HasKnife, HasGlases, Bloody, Dirty, Screw , Drawing, Oil, Random}
+    public enum Dirt {None, Bloody, Dirty, Screw , Drawing, Oil}
+
     Dictionary<RobotSetName, RobotSet> musicDatabase = new Dictionary<RobotSetName, RobotSet>();
 
     [SerializeField] private LevelControl manager;
@@ -45,19 +48,19 @@ public class Robot : MonoBehaviour
         somethingWrong = instance.somethingWrong;
         if (instance.partsSet == RobotSetName.Random ){
             int length = Enum.GetValues(typeof(RobotSetName)).Length;
-            int set = UnityEngine.Random.Range(2, length) - 1;
+            int set = UnityEngine.Random.Range(3, length) - 1;
             headSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             torsoSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             leftLegSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             rightLegSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             leftArmSet =  manager.robotSets[set];
-            set = UnityEngine.Random.Range(2, length) - 1;
+            set = UnityEngine.Random.Range(3, length) - 1;
             rightArmSet =  manager.robotSets[set];
-        } else if (instance.partsSet != RobotSetName.Roomba) {
+        } else {
             int set = (int)instance.partsSet - 1;
             headSet =  manager.robotSets[set];
             torsoSet =  manager.robotSets[set];
@@ -143,7 +146,7 @@ public class Robot : MonoBehaviour
     {
         GameObject scraps = GameObject.Find("RightPunch/scraps");
         GameObject sparks = GameObject.Find("RightPunch/sparks");
-        scraps.GetComponent<ParticleSystem>().Emit(5);
+        scraps.GetComponent<ParticleSystem>().Emit(2);
         sparks.GetComponent<ParticleSystem>().Emit(5);
         Debug.Log("Emitting right");
     }
@@ -152,7 +155,7 @@ public class Robot : MonoBehaviour
     {
         GameObject scraps = GameObject.Find("LeftPunch/scraps");
         GameObject sparks = GameObject.Find("LeftPunch/sparks");
-        scraps.GetComponent<ParticleSystem>().Emit(5);
+        scraps.GetComponent<ParticleSystem>().Emit(2);
         sparks.GetComponent<ParticleSystem>().Emit(5);
         Debug.Log("Emitting left");
     }

@@ -34,7 +34,6 @@ public class Screwdriver : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         RobotPart part = collision.transform.GetComponent<RobotPart>();
-        Debug.Log(part);
         if(part != null){
 		    part.Screwdriver();
 	    }

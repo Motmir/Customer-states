@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(DialogueInfo dialogue)
     {
         dialogueBox.SetActive(true);
-        nameText.text = dialogue.name;
+        nameText.text = dialogue.robotName;
 
         sentences.Clear();
 
