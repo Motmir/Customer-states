@@ -86,6 +86,7 @@ public class Punch_minigame : MonoBehaviour
 
     private void GameComplete()
     {
+        robot.BeatTheDevilOutOfThem();
         this.gameObject.SetActive(false);
         progressBar.GetComponent<Image>().fillAmount = 0;
     }
