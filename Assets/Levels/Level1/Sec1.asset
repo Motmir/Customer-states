@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
   m_Name: Sec1
   m_EditorClassIdentifier: 
-  partsSet: 5
+  partsSet: 3
   evil: 0
   on: 1
   somethingWrong: 1
