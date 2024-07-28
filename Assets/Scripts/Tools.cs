@@ -8,16 +8,25 @@ public class Tools : MonoBehaviour
     [SerializeField] private GameObject blowtorch;
     public void toolOne()
     {
-        Debug.Log("Tool number 1 is now active");
-        screwdriver.SetActive(true);
+        if (screwdriver.gameObject.activeSelf)
+        {
+            screwdriver.SetActive(false);
+        } else
+        {
+            screwdriver.SetActive(true);
+        }
+        
     }
     public void toolTwo()
     {
-        Debug.Log("Tool number 2 is now active");
-        blowtorch.SetActive(true);
-    }
-    public void toolThree()
-    {
-        Debug.Log("Tool number 3 is now active");
+        if (blowtorch.gameObject.activeSelf)
+        {
+            blowtorch.SetActive(false);
+        }
+        else
+        {
+            blowtorch.SetActive(true);
+        }
+        
     }
 }

@@ -87,5 +87,6 @@ public class Punch_minigame : MonoBehaviour
     private void GameComplete()
     {
         this.gameObject.SetActive(false);
+        progressBar.GetComponent<Image>().fillAmount = 0;
     }
 }
