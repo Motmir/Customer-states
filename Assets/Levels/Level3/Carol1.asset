@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Carol1
   m_EditorClassIdentifier: 
   partsSet: 0
-  evil: 0
+  evil: 1
   on: 0
-  somethingWrong: 0
+  somethingWrong: 1
   head:
     partMissing: 0
     dirt: 0
@@ -52,5 +52,5 @@ MonoBehaviour:
     batterd: 0
     loose: 0
     sparking: 0
-  dialogue: {fileID: 0}
-  customerNote: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: 8f380ebddc6c87a4c95473dc40e7533c, type: 2}
+  customerNote: {fileID: 11400000, guid: 2cd0f644927ebfe45ac00594e0fb6b4f, type: 2}

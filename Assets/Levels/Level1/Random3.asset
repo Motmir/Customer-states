@@ -18,27 +18,27 @@ MonoBehaviour:
   somethingWrong: 0
   head:
     partMissing: 0
-    dirt: 2
+    dirt: 0
     batterd: 0
     loose: 0
     sparking: 0
   torso:
     partMissing: 0
-    dirt: 2
-    batterd: 0
+    dirt: 4
+    batterd: 1
     loose: 0
-    sparking: 0
+    sparking: 1
   leftArm:
     partMissing: 0
-    dirt: 2
+    dirt: 4
     batterd: 0
-    loose: 0
+    loose: 1
     sparking: 0
   rightArm:
     partMissing: 0
     dirt: 3
     batterd: 0
-    loose: 0
+    loose: 1
     sparking: 0
   leftLeg:
     partMissing: 0

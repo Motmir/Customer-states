@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RobotPart : MonoBehaviour
 {
-    public enum Dirt {None, Bloody, Tires , Drawing, Oil}
+    public enum Dirt {None, Tires , Drawing, Oil, Bloody }
 
     public enum Part {
         Head,
@@ -87,10 +87,12 @@ public class RobotPart : MonoBehaviour
         if (screw) {
             screw.GetComponent<Screw>().SetScrew(isLoose);
         }
+
         hurt.GetComponent<SpriteMask>().sprite = sprite;
         dirt.GetComponent<SpriteMask>().sprite = sprite;
         hurt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isBroken/6);
         dirt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isDirty ? 1.0f : 0.0f);
+        dirt.GetComponent<SpriteRenderer>().sprite = dirtSprite;
     }
 
     public void Screwdriver(){

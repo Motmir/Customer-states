@@ -41,15 +41,15 @@ MonoBehaviour:
     loose: 0
     sparking: 0
   leftLeg:
-    partMissing: 1
+    partMissing: 0
     dirt: 0
-    batterd: 0
+    batterd: 1
     loose: 0
     sparking: 0
   rightLeg:
     partMissing: 0
-    dirt: 5
-    batterd: 0
+    dirt: 0
+    batterd: 1
     loose: 0
     sparking: 1
   dialogue: {fileID: 0}

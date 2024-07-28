@@ -53,4 +53,4 @@ MonoBehaviour:
     loose: 0
     sparking: 0
   dialogue: {fileID: 0}
-  customerNote: {fileID: 0}
+  customerNote: {fileID: 11400000, guid: 6644bc860863f4440a0c06b6ba4c4287, type: 2}

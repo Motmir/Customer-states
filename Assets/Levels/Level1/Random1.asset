@@ -18,19 +18,19 @@ MonoBehaviour:
   somethingWrong: 0
   head:
     partMissing: 0
-    dirt: 5
+    dirt: 3
     batterd: 0
     loose: 0
     sparking: 0
   torso:
     partMissing: 0
-    dirt: 5
+    dirt: 3
     batterd: 0
     loose: 0
     sparking: 0
   leftArm:
     partMissing: 0
-    dirt: 5
+    dirt: 0
     batterd: 0
     loose: 0
     sparking: 0
@@ -43,12 +43,12 @@ MonoBehaviour:
   leftLeg:
     partMissing: 0
     dirt: 0
-    batterd: 0
+    batterd: 1
     loose: 0
     sparking: 0
   rightLeg:
     partMissing: 0
-    dirt: 5
+    dirt: 3
     batterd: 0
     loose: 0
     sparking: 0
