@@ -144,7 +144,7 @@ public class Robot : MonoBehaviour
     {
         GameObject scraps = GameObject.Find("RightPunch/scraps");
         GameObject sparks = GameObject.Find("RightPunch/sparks");
-        scraps.GetComponent<ParticleSystem>().Emit(5);
+        scraps.GetComponent<ParticleSystem>().Emit(2);
         sparks.GetComponent<ParticleSystem>().Emit(5);
         Debug.Log("Emitting right");
     }
@@ -153,7 +153,7 @@ public class Robot : MonoBehaviour
     {
         GameObject scraps = GameObject.Find("LeftPunch/scraps");
         GameObject sparks = GameObject.Find("LeftPunch/sparks");
-        scraps.GetComponent<ParticleSystem>().Emit(5);
+        scraps.GetComponent<ParticleSystem>().Emit(2);
         sparks.GetComponent<ParticleSystem>().Emit(5);
         Debug.Log("Emitting left");
     }
