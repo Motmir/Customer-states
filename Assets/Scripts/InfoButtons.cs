@@ -80,7 +80,10 @@ public class InfoButtons : MonoBehaviour
         if (current < 3)
         {
             start.SetActive(false);
+            next.SetActive(true);
         }
+
+        
 
 
     }

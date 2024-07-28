@@ -11,10 +11,14 @@ public class DoNotDestroy : MonoBehaviour
     {
         scene = SceneManager.GetActiveScene().buildIndex;
 
-      
+        if (scene == 0)
         {
             DontDestroyOnLoad(GameObject.Find("BackgroundMusic"));
-        }
+        } 
+        
+        
+        
+        
        
     }
 }
