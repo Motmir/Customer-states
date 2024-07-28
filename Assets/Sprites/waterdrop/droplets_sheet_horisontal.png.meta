@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 4a87ed8aafbc74644add0aa648b64af2
+<<<<<<<< HEAD:Assets/Sprites/waterdrop/droplets_sheet_horisontal.png.meta
+guid: 35fdfd07fdaa82148925976ecdbfb8cc
+========
+guid: 82d04d173a077ac4e87bdb3139c224dd
+>>>>>>>> 16a718dfd9b15216c3471d217d81608aa83c3f23:Assets/Sprites/lost and found.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -82,19 +86,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
