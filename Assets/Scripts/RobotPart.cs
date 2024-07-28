@@ -5,7 +5,6 @@ using UnityEngine;
 public class RobotPart : MonoBehaviour
 {
     private Robot robot;
-    public Sprite sprite;
     public Sprite dirtSprite;
     private GameObject dirt;
     private GameObject hurt;
@@ -35,6 +34,7 @@ public class RobotPart : MonoBehaviour
 
     void Update()
     {
+        Sprite sprite = this.GetComponent<SpriteRenderer>().sprite;
         hurt.GetComponent<SpriteMask>().sprite = sprite;
         dirt.GetComponent<SpriteMask>().sprite = sprite;
         hurt.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,isBroken/6);
