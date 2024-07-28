@@ -25,7 +25,11 @@ public class RobotPart : MonoBehaviour
         robot = this.transform.parent.gameObject.GetComponent<Robot>();
         hurt = this.gameObject.transform.Find("hurt").gameObject;
         dirt = this.gameObject.transform.Find("dirt").gameObject;
-        screw = this.gameObject.transform.Find("screw").gameObject;
+        Transform screwTransform = this.gameObject.transform.Find("screw");
+        if (screwTransform != null)
+        {
+            screw = screwTransform.gameObject;
+        }
     }
 
     void FixedUpdate()

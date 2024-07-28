@@ -23,4 +23,4 @@ MonoBehaviour:
   leftLeg: 
   rightLeg: 
   dialogue: {fileID: 11400000, guid: fd87f9070c7058a489b52be9692cb564, type: 2}
-  customerNote: {fileID: 0}
+  customerNote: {fileID: 11400000, guid: e209999f0cbed1d47ab7a235cdcd6876, type: 2}
