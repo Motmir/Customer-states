@@ -9,12 +9,13 @@ public class Robot : MonoBehaviour
         Random, 
         Roomba,
         SecretaryGlasses,
-        Caroline,
+        Secretary,
         Handsome,
         Maid,
         Orbot,
         Tanner,
         Scrappy,
+        Caroline,
         TVbot
     }
     public enum Dirt {None, Bloody, Dirty, Screw , Drawing, Oil}
@@ -62,6 +63,7 @@ public class Robot : MonoBehaviour
             rightArmSet =  manager.robotSets[set];
         } else {
             int set = (int)instance.partsSet - 1;
+            Debug.Log(set);
             headSet =  manager.robotSets[set];
             torsoSet =  manager.robotSets[set];
             leftLegSet =  manager.robotSets[set];

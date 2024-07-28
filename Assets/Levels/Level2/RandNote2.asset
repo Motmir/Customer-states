@@ -9,15 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
-  m_Name: New Robot Instance Info 3
+  m_Script: {fileID: 11500000, guid: b48fde09b9047df4a92785a4900211a6, type: 3}
+  m_Name: RandNote2
   m_EditorClassIdentifier: 
-  partsSet: Random
-  evil: 0
-  on: 0
-  head: 
-  torso: 05000000
-  leftArm: 0000000002000000
-  rightArm: 0000000005000000
-  leftLeg: 
-  rightLeg: 02000000
+  ownerName: 
+  customerNote: Stabbed the neighbours car with knife

@@ -9,15 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
-  m_Name: New Robot Instance Info
+  m_Script: {fileID: 11500000, guid: b48fde09b9047df4a92785a4900211a6, type: 3}
+  m_Name: RandNote1
   m_EditorClassIdentifier: 
-  partsSet: Random
-  evil: 1
-  on: 0
-  head: 
-  torso: 05000000
-  leftArm: 05000000
-  rightArm: 
-  leftLeg: 
-  rightLeg: 
+  ownerName: 
+  customerNote: Runs away into the water with my fishing rod

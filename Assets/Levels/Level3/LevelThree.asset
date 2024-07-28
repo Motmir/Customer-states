@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
-  m_Name: New Robot Instance Info 2
+  m_Script: {fileID: 11500000, guid: 7d105655497df1b49b53ad4fee94b966, type: 3}
+  m_Name: LevelThree
   m_EditorClassIdentifier: 
-  partsSet: Random
-  evil: 0
-  on: 1
-  head: 
-  torso: 02000000
-  leftArm: 0200000003000000
-  rightArm: 
-  leftLeg: 05000000
-  rightLeg: 
+  levelList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
