@@ -40,6 +40,7 @@ public class Punch_minigame : MonoBehaviour
                 robot.EnablePunch();
                 punchTime = 0.3f;
                 GetComponent<AudioSource>().Play();
+                
             } else
             {
                 progress = -0.003f;
