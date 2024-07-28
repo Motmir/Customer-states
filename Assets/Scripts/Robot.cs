@@ -12,6 +12,24 @@ public class Robot : MonoBehaviour
     [SerializeField] private GameObject rightLeg;
     [SerializeField] private GameObject leftArm;
     [SerializeField] private GameObject rightArm;
+    [SerializeField] private GameObject leftPunch;
+    [SerializeField] private GameObject rightPunch;
+
+    public enum Condititions { Battered, Bloody, Dirty, Screw , Drawing, Oil}
+    public struct RobotInstance
+    {
+        public string partsSet;
+        public bool evil;
+        public bool on;
+
+        //Contidtions affecting part
+        public Condititions[] head;
+        public Condititions[] torso;
+        public Condititions[] leftArm;
+        public Condititions[] rightArm;
+        public Condititions[] leftLeg;
+        public Condititions[] rightLeg;
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -49,6 +67,38 @@ public class Robot : MonoBehaviour
 
     }
 
+    public void EnablePunch()
+    {
+        leftPunch.GetComponent<SpriteRenderer>().enabled = true;
+        rightPunch.GetComponent<SpriteRenderer>().enabled = true;
+        leftPunch.GetComponent<Animator>().enabled = true;
+        rightPunch.GetComponent<Animator>().enabled = true;
+    }
+
+    public void EmitRight()
+    {
+        GameObject scraps = GameObject.Find("RightPunch/scraps");
+        GameObject sparks = GameObject.Find("RightPunch/sparks");
+        scraps.GetComponent<ParticleSystem>().Emit(5);
+        sparks.GetComponent<ParticleSystem>().Emit(5);
+        Debug.Log("Emitting right");
+    }
+
+    public void EmitLeft()
+    {
+        GameObject scraps = GameObject.Find("LeftPunch/scraps");
+        GameObject sparks = GameObject.Find("LeftPunch/sparks");
+        scraps.GetComponent<ParticleSystem>().Emit(5);
+        sparks.GetComponent<ParticleSystem>().Emit(5);
+        Debug.Log("Emitting left");
+    }
+    public void DisablePunch()
+    {
+        leftPunch.GetComponent<SpriteRenderer>().enabled = false;
+        rightPunch.GetComponent<SpriteRenderer>().enabled = false;
+        leftPunch.GetComponent<Animator>().enabled = false;
+        rightPunch.GetComponent<Animator>().enabled = false;
+    }
 
 
     // Update is called once per frame

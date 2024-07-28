@@ -20,5 +20,7 @@ public class Audio_manager : MonoBehaviour
         mixer.SetFloat("musicVolume", Mathf.Log(sliderValue)*20);
             PlayerPrefs.SetFloat("MusicVolume",  sliderValue);
     }
+
+   
 }
 

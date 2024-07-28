@@ -4,15 +4,21 @@ using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
 public class Options_interactions : MonoBehaviour
 {
     public TextMeshProUGUI toggleText;
+    public TextMeshProUGUI volumeText;
+    public float volumeValue;
+
     public void Start()
     {
         toggleText = GameObject.Find("on/off").GetComponent<TextMeshProUGUI>();
+        volumeText = GameObject.Find("volumeValue").GetComponent<TextMeshProUGUI>();
+        
     }
 
     public void fullScreen()
@@ -32,5 +38,9 @@ public class Options_interactions : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
         SceneManager.LoadScene(0);
+
+        volumeValue = GameObject.Find("volumeSlider").GetComponent<Slider>().value;
+
+        volumeText.text = "" + Mathf.Round(volumeValue *100);
     }
 }

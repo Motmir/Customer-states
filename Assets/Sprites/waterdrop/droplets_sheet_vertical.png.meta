@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/waterdrop/droplets_sheet_vertical.png.meta
 guid: 10ea19589cab35d4ba645ae592d3ac70
+========
+guid: 4cafca3f3b43e174eb727102c6a502f8
+>>>>>>>> 16a718dfd9b15216c3471d217d81608aa83c3f23:Assets/Sprites/tool box blowtorch close.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

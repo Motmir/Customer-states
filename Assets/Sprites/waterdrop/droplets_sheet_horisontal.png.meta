@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/waterdrop/droplets_sheet_horisontal.png.meta
 guid: 35fdfd07fdaa82148925976ecdbfb8cc
+========
+guid: 82d04d173a077ac4e87bdb3139c224dd
+>>>>>>>> 16a718dfd9b15216c3471d217d81608aa83c3f23:Assets/Sprites/lost and found.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

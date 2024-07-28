@@ -4,19 +4,24 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+
 public class Punch_minigame : MonoBehaviour
 {
     [SerializeField] private InputAction punchAction;
-    [SerializeField] private GameObject punchPrefab;
     private GameObject progressBar;
     private float progress;
-    GameObject punch;
+    private float punchTime;
+    private Robot robot;
+    private bool isDone;
+    
 
     private void OnEnable()
     {
+        isDone = false;
         punchAction.Enable();
         progress = 0;
         progressBar = GameObject.Find("Bar");
+        robot = GameObject.Find("LevelManager").GetComponent<LevelControl>().robot.GetComponent<Robot>();
         StartCoroutine(ChangeBarColor());
     }
     private void OnDisable()
@@ -26,24 +31,34 @@ public class Punch_minigame : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (progressBar.GetComponent<Image>().fillAmount < 1)
+        if (progressBar.GetComponent<Image>().fillAmount < 1 && isDone == false)
         {
             if (punchAction.triggered != false)
             {
                 progress = 0.05f;
                 ApplyForce();
+                robot.EnablePunch();
+                punchTime = 0.3f;
+                GetComponent<AudioSource>().Play();
+                
             } else
             {
                 progress = -0.003f;
             }
-            
+            punchTime -= Time.deltaTime;
+            if (punchTime <= 0)
+            {
+                robot.DisablePunch();
+            }
             progressBar.GetComponent<Image>().fillAmount += progress;
         } else
         {
+            isDone = true;
+            robot.DisablePunch();
             Invoke("GameComplete", 0.7f);
         }
     }
-
+    
     private IEnumerator ChangeBarColor()
     {
         while (progressBar.GetComponent<Image>().fillAmount < 1)
@@ -66,18 +81,12 @@ public class Punch_minigame : MonoBehaviour
         {
             torso.velocity = Vector2.right * 5;
         }
-
-        Invoke("RemovePunch", 0.2f);
     }
 
-    public void RemovePunch()
-    {
-        Destroy(punch);
-    }
 
     private void GameComplete()
     {
-        GameObject minigame = GameObject.Find("Punch");
-        minigame.SetActive(false);
+        this.gameObject.SetActive(false);
+        progressBar.GetComponent<Image>().fillAmount = 0;
     }
 }
