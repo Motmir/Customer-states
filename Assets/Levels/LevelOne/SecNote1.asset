@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b48fde09b9047df4a92785a4900211a6, type: 3}
-  m_Name: BgNote2
+  m_Name: SecNote1
   m_EditorClassIdentifier: 
   ownerName: Rom Bach
-  customerNote: Put my dog on the roof
+  customerNote: Keeps following me around and stares at me

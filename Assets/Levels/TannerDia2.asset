@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb501f82bf4377b428023308b093d092, type: 3}
   m_Name: TannerDia2
   m_EditorClassIdentifier: 
-  robotName: 
+  robotName: Tanner
   dialogueStarted: 0
-  sentences: []
+  sentences:
+  - '''Tis but a scratch'
+  - It was just an accident. Frau Ina Shurance can be so clumsy sometimes.
