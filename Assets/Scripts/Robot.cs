@@ -8,12 +8,14 @@ public class Robot : MonoBehaviour
     public enum RobotSetName { 
         Random, 
         Roomba,
+        SecretaryGlasses
         Caroline,
         Handsome,
         Maid,
-        BlaBot,
         Orbot,
-        Tanner
+        Tanner,
+        Scrappy,
+        TVbot
     }
     public enum Dirt {None, Bloody, Dirty, Screw , Drawing, Oil}
 
