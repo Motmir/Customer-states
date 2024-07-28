@@ -735,6 +735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set: {fileID: 0}
+  IAm: 0
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &3137815010481955173
@@ -1077,6 +1079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set: {fileID: 0}
+  IAm: 5
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &2654163352452134397
@@ -1419,6 +1423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set: {fileID: 0}
+  IAm: 3
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &8444331674223407569
@@ -1512,12 +1518,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  head: {fileID: 0}
-  torso: {fileID: 0}
-  leftLeg: {fileID: 0}
-  rightLeg: {fileID: 0}
-  leftArm: {fileID: 0}
-  rightArm: {fileID: 0}
+  head: {fileID: 2475015974755963545}
+  headScript: {fileID: 836076557335146747}
+  torso: {fileID: 5143808291730261908}
+  torsoScript: {fileID: 7737115834579972702}
+  leftLeg: {fileID: 5423381082562094801}
+  leftLegScript: {fileID: 6983167619113194899}
+  rightLeg: {fileID: 3010342121575827441}
+  rightLegScript: {fileID: 785205738824080250}
+  leftArm: {fileID: 8999341507221962685}
+  leftArmScript: {fileID: 8434942558651891334}
+  rightArm: {fileID: 3292900156495002444}
+  rightArmScript: {fileID: 6541536884872839943}
   leftPunch: {fileID: 6675501771907964719}
   rightPunch: {fileID: 8078740576462971294}
   on: 0
@@ -6838,6 +6850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set: {fileID: 0}
+  IAm: 1
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &7283595224335272713
@@ -7044,6 +7058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set: {fileID: 0}
+  IAm: 4
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &3618094354989331338
@@ -12624,6 +12640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c9501e3e4a6e43a62dd50403afd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set: {fileID: 0}
+  IAm: 2
   dirtSprite: {fileID: 0}
   isDirty: 1
 --- !u!210 &8951206169906926403

@@ -13,6 +13,7 @@ public class LevelControl : MonoBehaviour
     [NonSerialized] public GameObject conveyorArm;
     [NonSerialized] public GameObject conveyorClaw;
     [SerializeField] public RobotSet[] robotSets;
+    [SerializeField] public Sprite[] dirts;
     [SerializeField] GameObject robotPrefab;
     [SerializeField] LevelInfo[] levels;
     [SerializeField] public GameObject screwdriver;
