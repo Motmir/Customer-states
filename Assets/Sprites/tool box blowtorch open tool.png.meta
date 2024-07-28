@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 4824a3ea5729fe34d966904e08f958e0
+<<<<<<<< HEAD:Assets/Sprites/aton/aton_arm.png.meta
+guid: 5955f51cce1766d4291d40ceab2755ec
+========
+guid: 744412d14a852d44b9611d880a4f02c5
+>>>>>>>> a7175a902519f3c4d1eda7688815f5fb83efe90d:Assets/Sprites/tool box blowtorch open tool.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

@@ -1,10 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Robot : MonoBehaviour
 {
+    public enum RobotSetName { 
+        Random, 
+        Roomba,
+        Caroline,
+        Handsome,
+        Maid,
+        BlaBot,
+        Orbot,
+        Tanner
+    }
+    public enum Condititions { Battered, HasKnife, HasGlases, Bloody, Dirty, Screw , Drawing, Oil, Random}
+    Dictionary<RobotSetName, RobotSet> musicDatabase = new Dictionary<RobotSetName, RobotSet>();
+
     [SerializeField] private LevelControl manager;
     [SerializeField] private GameObject head;
     [SerializeField] private GameObject torso;
@@ -15,21 +28,66 @@ public class Robot : MonoBehaviour
     [SerializeField] private GameObject leftPunch;
     [SerializeField] private GameObject rightPunch;
 
-    public enum Condititions { Battered, Bloody, Dirty, Screw , Drawing, Oil}
-    public struct RobotInstance
-    {
-        public string partsSet;
-        public bool evil;
-        public bool on;
 
-        //Contidtions affecting part
-        public Condititions[] head;
-        public Condititions[] torso;
-        public Condititions[] leftArm;
-        public Condititions[] rightArm;
-        public Condititions[] leftLeg;
-        public Condititions[] rightLeg;
+    private RobotSet headSet;
+    private RobotSet torsoSet;
+    private RobotSet leftLegSet;
+    private RobotSet rightLegSet;
+    private RobotSet leftArmSet;
+    private RobotSet rightArmSet;
+    private bool evil = false;
+    private bool somethingWrong = false;
+    private bool on = false;
+
+    void Init(RobotInstanceInfo instance){
+        evil = instance.evil;
+        on = instance.on;
+        somethingWrong = instance.somethingWrong;
+        if (instance.partsSet == RobotSetName.Random ){
+            int length = Enum.GetValues(typeof(RobotSetName)).Length;
+            int set = UnityEngine.Random.Range(2, length);
+            headSet =  manager.robotSets[set];
+            torsoSet =  manager.robotSets[set];
+            leftLegSet =  manager.robotSets[set];
+            rightLegSet =  manager.robotSets[set];
+            leftArmSet =  manager.robotSets[set];
+            rightArmSet =  manager.robotSets[set];
+        } else if (instance.partsSet != RobotSetName.Roomba) {
+            headSet =  manager.robotSets[(int)instance.partsSet];
+            torsoSet =  manager.robotSets[(int)instance.partsSet];
+            leftLegSet =  manager.robotSets[(int)instance.partsSet];
+            rightLegSet =  manager.robotSets[(int)instance.partsSet];
+            leftArmSet =  manager.robotSets[(int)instance.partsSet];
+            rightArmSet =  manager.robotSets[(int)instance.partsSet];
+        }
+        if (head) {
+            if(on){
+                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
+            } else {
+                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
+            }
+        }
+        if (torso) {
+            if(on){
+                torso.GetComponent<SpriteRenderer>().sprite = torsoSet.torsoOn;
+            } else {
+                torso.GetComponent<SpriteRenderer>().sprite = torsoSet.torsoOff;
+            }
+        }
+        if (leftArm) {
+            leftArm.GetComponent<SpriteRenderer>().sprite = leftArmSet.arm;
+        }
+        if (rightArm) {
+            rightArm.GetComponent<SpriteRenderer>().sprite = rightArmSet.arm;
+        }
+        if (leftLeg) {
+            leftLeg.GetComponent<SpriteRenderer>().sprite = leftLegSet.arm;
+        }
+        if (rightLeg) {
+            rightLeg.GetComponent<SpriteRenderer>().sprite = rightLegSet.arm;
+        }
     }
+
 
     // Start is called before the first frame update
     void Awake()
@@ -109,32 +167,40 @@ public class Robot : MonoBehaviour
     public void Wash()
     {
         if (head) {
-            Debug.Log("wash head");
             head.GetComponent<RobotPart>().isDirty = false;
         }
         if (torso) {
-            Debug.Log("wash torso");
             torso.GetComponent<RobotPart>().isDirty = false;
         }
         if (leftArm) {
-            Debug.Log("wash left arm");
             leftArm.GetComponent<RobotPart>().isDirty = false;
         }
         if (rightArm) {
-            Debug.Log("wash right arm");
             rightArm.GetComponent<RobotPart>().isDirty = false;
         }
         if (leftLeg) {
-            Debug.Log("wash left leg");
             leftLeg.GetComponent<RobotPart>().isDirty = false;
         }
         if (rightLeg) {
-            Debug.Log("wash right leg");
             rightLeg.GetComponent<RobotPart>().isDirty = false;
         }
     }
     public void TogglePower()
     {
-
+        on = !on;
+        if (head) {
+            if(on){
+                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
+            } else {
+                head.GetComponent<SpriteRenderer>().sprite = headSet.headOn;
+            }
+        }
+        if (torso) {
+            if(on){
+                torso.GetComponent<SpriteRenderer>().sprite = torsoSet.torsoOn;
+            } else {
+                torso.GetComponent<SpriteRenderer>().sprite = torsoSet.torsoOff;
+            }
+        }
     }
 }

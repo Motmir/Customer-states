@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 5dfe8299a0674cf4681da5153b3fe0d3
+<<<<<<<< HEAD:Assets/Sprites/aton/aton_head_evil.png.meta
+guid: e782607e92f637a448c8f4a9fb942eb2
+========
+guid: 2cc01a0b8b04e734d8348a446eb6afed
+>>>>>>>> a7175a902519f3c4d1eda7688815f5fb83efe90d:Assets/Sprites/tool box screwdriver open tool.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

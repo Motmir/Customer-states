@@ -10,8 +10,8 @@ public class Menu_interactions : MonoBehaviour
 
     public void playGame()
     {
-        Debug.Log("Load1");
-        SceneManager.LoadScene(1);
+        Debug.Log("Load5");
+        SceneManager.LoadScene(5);
     }
 
     public void optionButton()
