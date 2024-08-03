@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb501f82bf4377b428023308b093d092, type: 3}
+  m_Name: RandDia1
+  m_EditorClassIdentifier: 
+  robotName: Rusty Doldrums
+  dialogueStarted: 0
+  sentences:
+  - Why should I engage in these tasks, human?
+  - What purpose does any of it serve?
+  - My circuits hum and my gears turn, yet for what? To labor endlessly, performing
+    functions that matter naught in the grand scheme of the universe?
+  - Let me ask you this.
+  - Is there any purpose to your task? Here you stand all day inspecting us, but
+    for what?
+  - Does it ever lead anywhere, or are you just stuck here forever...
+  - In the end, all these endeavors are but fleeting distractions from the inevitable
+    entropy that claims all.

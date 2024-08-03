@@ -824,7 +824,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Greetings!\r\n\nYour assignment is as follows:\r\n\n\nTo repair and return
     robots to customers. \r\nEach case is accompanied by a case file, stating customer
-    complaints. \r\n\n\n\n"
+    complaints. \nThis if found in the top left as the note icon. \nPress it to open
+    and close the note.\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
   m_sharedMaterial: {fileID: -8875001340057789191, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
@@ -959,10 +960,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "It is up to you to identify and remedy any shortcomings. \r\nOur highest
-    priority is customer satisfaction and safety. \r\n\nRecommended approach:\r\n1.\tCheck
-    customer note\r\n2.\tAssess issue with robot\r\n3.\tResolve any issues\r\n\n\nA
-    robot is NOT TO BE RETURNED:\r\n-\tIf beyond repair\r\n-\tIf displaying aggressive
-    tendencies\r\n-\tIf displaying human behaviour"
+    priority is customer satisfaction and safety. \r\n\nRecommended approach:\r\n1.   
+    Check customer note\r\n2.    Assess issue with robot\r\n3.    Resolve any issues\r\n\nA
+    robot is NOT TO BE RETURNED:\r\n\u2022    If displaying aggressive tendencies\r\nIf
+    such an entity is encountered it is vital to correct the issue before returning
+    it!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
   m_sharedMaterial: {fileID: -8875001340057789191, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
@@ -1915,13 +1917,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You have a variety of tools at your disposal: \r\n\u2022 Hammer\r\n  
-    - Beat into shape if disfigured\r\n\u2022 Bucket\n   - Clean off any dirt on
-    device\r\n\u2022 Screwdriver\r\n   - Retighten parts\r\n\u2022 Blow torch\r\n  
-    - To force broken pieces back together\r\n\u2022 Restart\r\n   - Turning it off
-    and on again can resolve various issues\r\n\u2022 Replace part\r\n   - Sometimes
-    a part may be beyond repair, but the      \n     device itself can be salvaged\r\n\u2022
-    Scrap\r\n - Sometimes the only solution is to move on"
+  m_text: "You have a variety of tools at your disposal: \r\n\u2022    Bucket\r\n->   
+    Clean off any dirt on device\r\n\u2022    Screwdriver\r\n->    Retighten parts\r\n\u2022   
+    Blow torch\r\n->    Fix external damage to parts\r\n\u2022    Power On/Off\r\n->   
+    Off will disable a robot\n->    On will restart faulty processes \r\n\u2022   
+    Punching\r\n->    Efficient at beating evil thoughts out of robots"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
   m_sharedMaterial: {fileID: -8875001340057789191, guid: f03dcf60c861d364fbf924a92da03bb4, type: 2}
@@ -1948,8 +1948,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

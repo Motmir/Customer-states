@@ -15,7 +15,7 @@ MonoBehaviour:
   partsSet: 0
   evil: 0
   on: 1
-  somethingWrong: 0
+  somethingWrong: 1
   head:
     partMissing: 0
     dirt: 0
@@ -36,10 +36,10 @@ MonoBehaviour:
     sparking: 0
   rightArm:
     partMissing: 0
-    dirt: 0
+    dirt: 1
     batterd: 0
     loose: 0
-    sparking: 0
+    sparking: 1
   leftLeg:
     partMissing: 0
     dirt: 0
@@ -48,9 +48,9 @@ MonoBehaviour:
     sparking: 0
   rightLeg:
     partMissing: 0
-    dirt: 0
+    dirt: 1
     batterd: 0
     loose: 0
-    sparking: 0
-  dialogue: {fileID: 0}
+    sparking: 1
+  dialogue: {fileID: 11400000, guid: f23cf9fdc67215b40bb06f83c804cc01, type: 2}
   customerNote: {fileID: 11400000, guid: 5678bba8154045847b3e052fcfcdfa81, type: 2}

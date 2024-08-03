@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
   m_Name: Sec2
   m_EditorClassIdentifier: 
-  partsSet: 0
+  partsSet: 3
   evil: 0
   on: 0
-  somethingWrong: 0
+  somethingWrong: 1
   head:
     partMissing: 0
     dirt: 0
     batterd: 0
     loose: 0
-    sparking: 0
+    sparking: 1
   torso:
     partMissing: 0
     dirt: 0

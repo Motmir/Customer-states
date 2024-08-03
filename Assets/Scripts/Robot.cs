@@ -16,7 +16,8 @@ public class Robot : MonoBehaviour
         Tanner,
         Scrappy,
         Caroline,
-        TVbot
+        TVbot,
+        Lovely
     }
 
     Dictionary<RobotSetName, RobotSet> musicDatabase = new Dictionary<RobotSetName, RobotSet>();
@@ -34,11 +35,14 @@ public class Robot : MonoBehaviour
     public bool evil = false;
     public bool somethingWrong = false;
     public bool on = false;
+    public RobotSetName robotSet;
 
     public void Init(RobotInstanceInfo instance){
         evil = instance.evil;
         on = instance.on;
         somethingWrong = instance.somethingWrong;
+        Debug.Log(instance.partsSet);
+        robotSet = instance.partsSet;
         UpdateRobotPart(instance.partsSet, instance.head, head);
         UpdateRobotPart(instance.partsSet, instance.torso, torso);
         UpdateRobotPart(instance.partsSet, instance.leftLeg, leftLeg);
@@ -110,7 +114,6 @@ public class Robot : MonoBehaviour
         GameObject sparks = GameObject.Find("RightPunch/sparks");
         scraps.GetComponent<ParticleSystem>().Emit(2);
         sparks.GetComponent<ParticleSystem>().Emit(5);
-        Debug.Log("Emitting right");
     }
 
     public void EmitLeft()
@@ -119,7 +122,6 @@ public class Robot : MonoBehaviour
         GameObject sparks = GameObject.Find("LeftPunch/sparks");
         scraps.GetComponent<ParticleSystem>().Emit(2);
         sparks.GetComponent<ParticleSystem>().Emit(5);
-        Debug.Log("Emitting left");
     }
     public void DisablePunch()
     {

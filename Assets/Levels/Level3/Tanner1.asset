@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
   m_Name: Tanner1
   m_EditorClassIdentifier: 
-  partsSet: 0
+  partsSet: 6
   evil: 0
   on: 0
   somethingWrong: 0
@@ -24,13 +24,13 @@ MonoBehaviour:
     sparking: 0
   torso:
     partMissing: 0
-    dirt: 0
+    dirt: 3
     batterd: 0
     loose: 0
     sparking: 0
   leftArm:
     partMissing: 0
-    dirt: 0
+    dirt: 3
     batterd: 0
     loose: 0
     sparking: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
     sparking: 0
   leftLeg:
     partMissing: 0
-    dirt: 0
+    dirt: 3
     batterd: 0
     loose: 0
     sparking: 0
@@ -52,5 +52,5 @@ MonoBehaviour:
     batterd: 0
     loose: 0
     sparking: 0
-  dialogue: {fileID: 0}
-  customerNote: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: d52cac8710211294e933456cf18b2cfe, type: 2}
+  customerNote: {fileID: 11400000, guid: f40ec71b0c2eb6c4e8ab079ae0124037, type: 2}

@@ -7,7 +7,7 @@ public class ButtonTransparency : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f;
+        transform.GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f;
     }
    
 }

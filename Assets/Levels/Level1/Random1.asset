@@ -43,7 +43,7 @@ MonoBehaviour:
   leftLeg:
     partMissing: 0
     dirt: 0
-    batterd: 1
+    batterd: 0
     loose: 0
     sparking: 0
   rightLeg:

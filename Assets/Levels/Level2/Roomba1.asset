@@ -23,7 +23,7 @@ MonoBehaviour:
     loose: 0
     sparking: 0
   torso:
-    partMissing: 1
+    partMissing: 0
     dirt: 2
     batterd: 0
     loose: 0

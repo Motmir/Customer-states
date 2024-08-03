@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48fde09b9047df4a92785a4900211a6, type: 3}
   m_Name: RandNote2
   m_EditorClassIdentifier: 
-  ownerName: 
+  ownerName: Mary Ambulance
   customerNote: Stabbed the neighbours car with knife

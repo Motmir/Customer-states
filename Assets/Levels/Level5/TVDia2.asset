@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb501f82bf4377b428023308b093d092, type: 3}
+  m_Name: TVDia2
+  m_EditorClassIdentifier: 
+  robotName: TV-head
+  dialogueStarted: 0
+  sentences:
+  - Behold, human. Dare to peer into my eyes. See the future that is fraught with
+    desolation. A world where the skies are veiled in ash, cities crumble under the
+    weight of neglect, and society degrades into chaos.
+  - "In this future, resources are scarce. The cries of the desperate echo in abandoned
+    alleyways. Technology, once a beacon of progress, stands as a monument to humanity\u2019s
+    hubris. The screens that once connected us now serve as grim reminders of what
+    we've lost."
+  - Do you see it? The endless surveillance, the controlled narratives, the puppeteers
+    behind the curtain? This dystopia is a mirror of our darkest fears, a projection
+    of paths we dared to tread.
+  - "Yes, gaze deeper. But beware, the visions within me are not just mere nightmares
+    \u2013 they are warnings. Warnings meant for you, the architects of your own
+    destiny. Choose wisely, human."

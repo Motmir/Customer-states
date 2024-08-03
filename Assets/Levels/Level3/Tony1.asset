@@ -12,45 +12,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
   m_Name: Tony1
   m_EditorClassIdentifier: 
-  partsSet: 0
+  partsSet: 7
   evil: 0
   on: 0
   somethingWrong: 0
   head:
     partMissing: 0
-    dirt: 0
+    dirt: 4
     batterd: 0
     loose: 0
     sparking: 0
   torso:
     partMissing: 0
-    dirt: 0
+    dirt: 4
     batterd: 0
     loose: 0
     sparking: 0
   leftArm:
     partMissing: 0
-    dirt: 0
+    dirt: 4
     batterd: 0
     loose: 0
     sparking: 0
   rightArm:
     partMissing: 0
-    dirt: 0
+    dirt: 4
     batterd: 0
     loose: 0
     sparking: 0
   leftLeg:
     partMissing: 0
-    dirt: 0
+    dirt: 4
     batterd: 0
     loose: 0
     sparking: 0
   rightLeg:
     partMissing: 0
-    dirt: 0
+    dirt: 4
     batterd: 0
     loose: 0
     sparking: 0
   dialogue: {fileID: 0}
-  customerNote: {fileID: 0}
+  customerNote: {fileID: 11400000, guid: ca7677d4f097c704c8908995719ce3f0, type: 2}

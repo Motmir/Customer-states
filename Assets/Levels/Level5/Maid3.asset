@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad873bb506accf844bc582dfcdedabc9, type: 3}
+  m_Name: Maid3
+  m_EditorClassIdentifier: 
+  partsSet: 5
+  evil: 0
+  on: 1
+  somethingWrong: 1
+  head:
+    partMissing: 0
+    dirt: 0
+    batterd: 0
+    loose: 0
+    sparking: 1
+  torso:
+    partMissing: 0
+    dirt: 0
+    batterd: 0
+    loose: 0
+    sparking: 1
+  leftArm:
+    partMissing: 0
+    dirt: 0
+    batterd: 0
+    loose: 0
+    sparking: 1
+  rightArm:
+    partMissing: 0
+    dirt: 0
+    batterd: 0
+    loose: 0
+    sparking: 1
+  leftLeg:
+    partMissing: 0
+    dirt: 0
+    batterd: 0
+    loose: 0
+    sparking: 1
+  rightLeg:
+    partMissing: 0
+    dirt: 0
+    batterd: 0
+    loose: 0
+    sparking: 1
+  dialogue: {fileID: 11400000, guid: b88e500920fe6d742ba571c42a7ebc28, type: 2}
+  customerNote: {fileID: 11400000, guid: c9acd584ba0bc6e429047577c011ab1e, type: 2}

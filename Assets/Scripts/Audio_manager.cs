@@ -9,15 +9,6 @@ public class Audio_manager : MonoBehaviour
 {
   
     public AudioMixer mixer;
-    public Slider slider;
-
-    
-
-    void Start()
-    {
-       
-        slider.value = PlayerPrefs.GetFloat("musicVolume", 0.75f);
-    }
 
     public void changeVolume (float sliderValue)
     {

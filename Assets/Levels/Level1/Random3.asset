@@ -15,7 +15,7 @@ MonoBehaviour:
   partsSet: 0
   evil: 0
   on: 0
-  somethingWrong: 0
+  somethingWrong: 1
   head:
     partMissing: 0
     dirt: 0

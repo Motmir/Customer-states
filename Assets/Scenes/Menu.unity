@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e512d6bd7f4fdd45bfa8eb8145a4537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorArrow: {fileID: 2800000, guid: 86f9e2ba9f9d4094f9f2e6bdd7f8c932, type: 3}
+  cursorArrow: {fileID: 2800000, guid: 6db575a7b5f01984c99e2c6741bcb22b, type: 3}
 --- !u!4 &312389496
 Transform:
   m_ObjectHideFlags: 0
@@ -2596,7 +2596,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: a091baa3a29642b448e748f459ea0f98, type: 2}
-  slider: {fileID: 0}
 --- !u!1 &1812847209
 GameObject:
   m_ObjectHideFlags: 0

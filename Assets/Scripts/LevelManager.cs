@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -58,7 +60,6 @@ public class LevelControl : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        Debug.Log("Helllo");
         robots = new Queue<RobotInstanceInfo>();
         conveyorArm = GameObject.Find("arm_base");
         conveyorClaw = GameObject.Find("conveyor_claw");
@@ -73,11 +74,12 @@ public class LevelControl : MonoBehaviour
             GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>().DisplayScore();
             return; 
         }
+        FindObjectOfType<DialogueManager>().EndDialogue();
         float xPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).x;
         float yPos = Camera.main.ScreenToWorldPoint(conveyorArm.transform.position).y;
         robot = Instantiate(this.robotPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
         currRobot = robots.Dequeue();
-        if (currRobot.customerNote.ownerName != "")
+        if (currRobot.customerNote.ownerName != null)
         {
             ownerName.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.ownerName;
         }
@@ -87,7 +89,6 @@ public class LevelControl : MonoBehaviour
             int randTwo = UnityEngine.Random.Range(0, firstNames.Length - 1);
             ownerName.GetComponent<TextMeshProUGUI>().text = firstNames[randOne] + " " + lastNames[randTwo];
         }
-        FindObjectOfType<DialogueManager>().EndDialogue();
         note.GetComponent<TextMeshProUGUI>().text = currRobot.customerNote.customerNote;
         robot.GetComponent<Robot>().Init(currRobot);
         if (currRobot.dialogue != null)
@@ -112,7 +113,6 @@ public class LevelControl : MonoBehaviour
 
     public void NextLevel()
     {
-        scoreManagerScript.DisplayScore();
 
         currentLevel++;
         LoadLevel(levels[currentLevel]);
@@ -151,7 +151,6 @@ public class LevelControl : MonoBehaviour
             conveyorArm.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             if (conveyorArm.transform.position.x >= 15)
             {
-                scoreManagerScript.calculateRobotScore();
                 Destroy(robot);
                 crane.SetActive(false);
                 conveyorArm.transform.position = new Vector3(-25, 3.88f, -0.1f);
@@ -186,14 +185,18 @@ public class LevelControl : MonoBehaviour
         {
             hinge.useLimits = false;
         }
+        scoreManagerScript.NewRobotSpawned();
+
     }
 
     public void setDone()
     {
         done = true;
+        scoreManagerScript.calculateRobotScore();
     }
     public void DiscardDone()
     {
+        scoreManagerScript.RobotDiscarded();
         robot.GetComponent<Robot>().Discard();
         conveyorClaw.GetComponent<claw>().Open();
         Invoke("setDone", 0.5f);
